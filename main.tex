@@ -1,0 +1,76 @@
+%=================================================================================
+%                西南交通大学研究生学位论文LaTeX模板
+%=================================================================================
+
+% 使用全局样式swjtuThesis，大部分的模板格式均在样式文件中定义完成
+% 单面打印: oneside, 双面打印: twoside
+\documentclass[twoside,openany]{swjtuThesis}
+
+% 超链接颜色设置（调试时候使用，方便区分文本和超链接）
+%\hypersetup{colorlinks,linkcolor=red,citecolor=green,urlcolor=magenta}
+\hypersetup{colorlinks=true,pdfborder={0 0 0},citecolor=blue,linkcolor=black} % 正式版
+
+% 加载信息
+\input{setup/info}				% 加载论文信息
+\input{setup/type}    			% 区分硕博类型（模板自动区分，在info.tex中进行设置）
+\input{setup/package}			% 加载使用宏包
+
+
+\begin{document}
+
+%---------------------------------------------------------------------------------
+% 封面生成（包括中、英文封面、版权协议以及硕（博）士主要工作简述）
+\pdfbookmark[0]{封面}{Cover}
+\makecover
+
+% 论文前言（包括中、英文摘要及目录，页码为罗马数字，在研究生论文目录中不显示摘要）
+\frontmatter
+\pagenumbering{Roman}
+\thesispagestyle{-4}{西南交通大学\cDegree{}研究生学位论文}{第~\thepage~页}	% 页眉设置
+
+% 加载中文摘要
+\pdfbookmark[0]{中英文摘要}{Abstract}
+\include{preface/cabstract}
+
+% 加载英文摘要
+\include{preface/eabstract}
+
+% 目录生成
+\pdfbookmark[0]{目录}{Content}
+\tableofcontents
+
+%---------------------------------------------------------------------------------
+% 学位论文正文（包含各章节内容和结论，页码为阿拉伯数字）
+\mainmatter
+\thesispagestyle{-4}{西南交通大学\cDegree{}研究生学位论文}{第~\thepage~页}	% 页眉设置
+
+% 加载论文正文（第1章 - 第N章、结论）
+% 目前共有四个章节文件，用户可以自行在content/:文件夹中添加chap0X.tex文件
+% 若新增文件为content/chap_name.tex, 则在这里直接通过\include{content/chap_name}来包含该章节内容
+\include{content/chap01}
+\include{content/chap02}
+\include{content/chap03}
+\include{content/chap04}
+
+% 加载论文结论
+\include{content/conclusion}
+
+%---------------------------------------------------------------------------------
+% 论文附录（包括致谢、参考文献、证明、工作列表）
+
+% 加载致谢文件
+\include{appendix/remerciement}
+
+% 加载参考文献
+\begin{spacing}{1.2} %数字代表行距
+	\setlength{\bibsep}{3pt plus1pt minus1pt}
+	\bibliographystyle{ref/swjtuBST} %定义参考文献列表格式，参考国标文件GB/T 7714-2015制作
+	\bibliography{ref/refEx} %加入参考文献的.bib库，可自行建立替换，refEx为示范文件
+\end{spacing}
+\addcontentsline{toc}{chapter}{参考文献}
+
+% 加载附录文件和个人工作列表
+\include{appendix/appA}						% 非必要章节，主要用以放置测试数据、数学证明或者个人简介
+\include{appendix/myWork}					% 攻读硕（博）士论文攻读期间取得的科研成果，论文、专利等
+
+\end{document}

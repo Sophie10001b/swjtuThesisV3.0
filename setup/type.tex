@@ -1,0 +1,30 @@
+%---------------------------------------------------------------------------------
+%                判断学位论文类型（硕士学位or博士学位）
+%---------------------------------------------------------------------------------
+
+% 请注意：本文件已经定义好需要使用的字符串，不建议用户更改。
+
+\newif\ifdegreedoctor
+\newif\ifdegreemaster
+
+\def\temp{Doctor}
+\ifx\temp\degree
+\degreedoctortrue  \degreemasterfalse
+\fi
+
+\def\temp{Master}
+\ifx\temp\degree
+\degreedoctorfalse  \degreemastertrue
+\fi
+
+\ifdegreedoctor
+\newcommand{\fitDegree}{博\quad 士}
+\newcommand{\cDegree}{博士}
+\newcommand{\eDegree}{Doctor of }
+\fi
+
+\ifdegreemaster
+\newcommand{\fitDegree}{硕\quad 士}
+\newcommand{\cDegree}{硕士}
+\newcommand{\eDegree}{Master of }
+\fi
