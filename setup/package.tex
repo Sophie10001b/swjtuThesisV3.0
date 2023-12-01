@@ -47,11 +47,12 @@
 \usepackage{colortbl} %控制表格颜色
 
 % 列表宏包
+% V3.0更改——参考已发表论文格式，调整列表元素的缩进选项，达到首行缩进2字符的效果，同时去除了列表与正文的额外间隔
 \usepackage{enumerate} % 其后可接选项[a,A,i,I,1]
 \usepackage{enumitem}
-\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
-\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
-\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3pt}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt,leftmargin=0pt, itemindent=3.5em}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt,leftmargin=0pt,itemindent=3.5em}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt,leftmargin=0pt,itemindent=3.5em}
 
 % 英文采用Times New Rome字体（建议把这个宏包放在最后避免发生宏包冲突）
 \usepackage{fontspec}
