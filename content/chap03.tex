@@ -29,7 +29,8 @@
 \subsection{排版问题}
 \begin{enumerate}
 	\item[Q1:]如何实现博士学位论文的页码单双页左右混合显示？
-	\item[A1:]其实这是一个\textbf{单面打印}和\textbf{双面打印}功能的定义。由于swjtuThesis只采用了单一样式文件swjtuThesis.cls实现模板建立(减少模板复杂程度)，针对硕士和博士的格式区分是通过引入判断字符串实现的，因为加载样式出现在判断学位种类之前，而单面打印和双面打印需要在加载样式的时候同时进行定义，因此无法通过模板自动实现此项功能。\textbf{解决办法}：如果是博士研究生，请于主文件main.tex中，修改\verb|\documentclass[oneside,openany]{swjtuThesis}|中的oneside为twoside即可手动实现双面打印功能。	
+	\item[A1:]其实这是一个\textbf{单面打印}和\textbf{双面打印}功能的定义。由于swjtuThesis只采用了单一样式文件swjtuThesis.cls实现模板建立(减少模板复杂程度)，针对硕士和博士的格式区分是通过引入判断字符串实现的，因为加载样式出现在判断学位种类之前，而单面打印和双面打印需要在加载样式的时候同时进行定义，因此无法通过模板自动实现此项功能。\textbf{解决办法}：如果是博士研究生，请于主文件main.tex中，修改\newline
+\verb|\documentclass[oneside,openany]{swjtuThesis}|中的oneside为twoside即可手动实现双面打印功能。	
 	\item[Q2:]
 	\item[A2:]
 \end{enumerate}
