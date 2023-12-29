@@ -8,7 +8,7 @@
 
 % 超链接颜色设置（调试时候使用，方便区分文本和超链接）
 %\hypersetup{colorlinks,linkcolor=red,citecolor=green,urlcolor=magenta}
-\hypersetup{colorlinks=true,pdfborder={0 0 0},citecolor=blue,linkcolor=black} % 正式版
+\hypersetup{colorlinks=true,pdfborder={0 0 0},citecolor=black,linkcolor=black,urlcolor=black} % 正式版
 
 % 加载信息
 \input{setup/info}				% 加载论文信息
@@ -47,6 +47,10 @@
 % 加载论文正文（第1章 - 第N章、结论）
 % 目前共有四个章节文件，用户可以自行在content/:文件夹中添加chap0X.tex文件
 % 若新增文件为content/chap_name.tex, 则在这里直接通过\include{content/chap_name}来包含该章节内容
+
+% V3.0更改——调整允许跨页的强度，0--4，越大则更偏向于跨页显示
+\allowdisplaybreaks[4]
+
 \include{content/chap01}
 \include{content/chap02}
 \include{content/chap03}
