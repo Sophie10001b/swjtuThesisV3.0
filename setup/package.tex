@@ -17,6 +17,9 @@
 \usepackage[lined,boxed,ruled,algochapter]{algorithm2e} % algochapter算法按章编号
 \renewcommand{\algorithmcfname}{算法}
 
+% 额外的图表排列控制
+\usepackage{float}
+
 % 表格制作常用宏包
 \usepackage{multirow}
 
@@ -57,5 +60,7 @@
 % 英文采用Times New Rome字体（建议把这个宏包放在最后避免发生宏包冲突）
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
+% V3.0更改——Times New Roman下强制使用AMS中的黑板体
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 % 不需要设置CJKmainfont，ctex 宏包已经很好的处理了
 % 不仅设置了粗体为黑体，斜体为楷体，还兼容了winfonts和adobefonts
