@@ -9,6 +9,15 @@
 - Windows 11 已测试编译环境：Tex Live 2021 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
+:computer: **更新日志**
+- 2023.12.29(swjtuBST.bst)
+  1. 修复了有关学位论文中地点与单位的引用格式设置，目前格式为"address: school"
+  2. 2023.12.29 - 现在文献引用支持自动省略位于前三位作者之后的所有作者，并添加et al.(如果为中文文献，请手动为文献条目中的"language"赋值"zh"，此时et al.会变更为"...等.")
+  3. 现在Times New Roman中能够正确使用AMS的黑板体，同时在main.tex中新增了调整跨页宽容度的相关设置
+  
+- 2023.12.01(package.tex)
+  1. 参考其它已发表学位论文，列表的缩进效果已经更改为首行缩进2字符，同时去除了列表与上下正文间的额外间隔
+
 :computer: **swjtuThesis V3.0主要版面设置更改(主要集中于swjtuThesis.cls文件与package.tex文件)**
 1. ctextbook中的设置`winfonts`被更改为`nofonts`，并通过CJK手动设置主要字体。该项更改主要解决了之前模板无法在Windows外系统完成编译的问题，现在新的模板已经在Windows和macOS中通过编译测试。注意在macOS中使用模板时可能出现字体缺失问题，作者本人在使用时额外安装了以下字体：
 ```
@@ -22,7 +31,6 @@ Linux Libertine O
 4. 文武线的微调。略微减小了细线宽，略微增大了粗细线间距，现在的文武线效果更加接近《撰写规范》中的示例
 5. 三线表的设置。参考校内已发表的硕士论文以及其它高校的论文，新的三线表设置中将表间行距设置为`1.3`，粗线宽设置为`0.12em`，细线宽设置为`0.08em`
 6. 图表题格式微调。参考其它高校的论文，多行图表题的行距倍数增大为`1.2`
-7. 列表格式的更改。参考其它已发表学位论文，列表的缩进效果已经更改为首行缩进2字符，同时去除了列表与上下正文间的额外间隔(*2023.12.01 Update -- package.tex*)
 
 :computer: **swjtuThesis V3.0主要文献引用设置更改(主要集中于swjtuBST.bst文件)**
 1. 为满足对ArXiv和网页文件的引用要求[EB/OL]，模板内新增了函数`add.EBOL`，同时新增了基于`@misc`修改而来的新引用类型`@website`，使用方式与输出效果如下：
