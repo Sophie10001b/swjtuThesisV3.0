@@ -77,6 +77,13 @@
 \renewcommand\heavyrulewidth{0.12em} %粗线宽
 \renewcommand\lightrulewidth{0.08em} %细线宽
 
+%%表内多行内容设置
+% V3.0更改——引入tabularx包以支持表内换行
+\RequirePackage{tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
 % 各章题序及标题：小2号黑体，题序和标题之间空一格，不加标点
 \CTEXsetup[format = {\centering\zihao{-2}\heiti}, nameformat = {}, number = {~\arabic{chapter}~}, titleformat = {}, aftername = {\quad}]{chapter}
 
