@@ -81,6 +81,7 @@ ENTRY
     institution
     journal
     key
+    language
     month
     note
     number
@@ -259,8 +260,19 @@ FUNCTION {space.word}
 FUNCTION {bbl.and}
 { "\protect\BIBand{}"}
 
+% default for English
 FUNCTION {bbl.etal}
-{ "et~al." }
+{
+  language empty$
+  {"et~al."}
+  {
+    language "zh" =
+    {"等"}
+    {}
+    if$
+  }
+  if$
+}
 
 FUNCTION {bbl.editors}
 { "eds." }
@@ -460,6 +472,7 @@ INTEGERS { nameptr namesleft numnames }
 
 STRINGS  { bibinfo}
 
+% Support for adding "et al." automatically in V3.0
 FUNCTION {format.names}
 { 'bibinfo :=
   duplicate$ empty$ 'skip$ {
@@ -467,7 +480,11 @@ FUNCTION {format.names}
   "" 't :=
   #1 'nameptr :=
   s num.names$ 'numnames :=
-  numnames 'namesleft :=
+  numnames #3 >
+  { #4 }
+  { numnames }
+  if$
+  'namesleft :=
     { namesleft #0 > }
     { s nameptr
       "{vv~}{ll}{ f{~}}{ jj}"
@@ -478,18 +495,13 @@ FUNCTION {format.names}
       nameptr #1 >
         {
           namesleft #1 >
-            { ", " * t * }
             {
-              s nameptr "{ll}" format.name$ duplicate$ "others" =
-                { 't := }
-                { pop$ }
-              if$
-              "," *
-              t "others" =
-                {
-                  " " * bbl.etal *
-                }
-                { " " * t * }
+              ", " * t * 
+            }
+            {
+              numnames #3 >
+              { ", " * bbl.etal * }
+              { ", " * t * }
               if$
             }
           if$
@@ -1261,8 +1273,9 @@ FUNCTION {mastersthesis}
   "title" output.check
   new.sentence
   bbl.mthesis format.thesis.type output.nonnull
-  school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  add.colon
+  school "school" bibinfo.warn output
   format.date "year" output.check
   format.note output
   fin.entry
@@ -1316,8 +1329,9 @@ FUNCTION {phdthesis}
   "title" output.check
   add.D
   new.sentence
-  school "school" bibinfo.warn output
   address "address" bibinfo.check output
+  add.colon
+  school "school" bibinfo.warn output
   format.date "year" output.check
   format.note output
   fin.entry
