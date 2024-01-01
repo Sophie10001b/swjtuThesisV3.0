@@ -10,6 +10,10 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.01.01(swjtuBST.bst, swjtuThesis.cls)
+  1. 现在howpublished中的内容会自动被识别为url，无需手动添加\url{}标识，从而可以基于hyperref包进行文献引用中url的自动换行。同时url字体已经被设置为与正文字体保持一致
+  2. 补充了三线表中\cmidrule线条的粗细设置选项，现在默认设置为`0.05em`
+  
 - 2023.12.29(swjtuBST.bst)
   1. 修复了有关学位论文中地点与单位的引用格式设置，目前格式为"address: school"
   2. 2023.12.29 - 现在文献引用支持自动省略位于前三位作者之后的所有作者，并添加et al.(如果为中文文献，请手动为文献条目中的"language"赋值"zh"，此时et al.会变更为"...等.")
