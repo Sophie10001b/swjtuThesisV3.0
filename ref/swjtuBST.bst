@@ -600,6 +600,14 @@ FUNCTION {n.dashify}
 FUNCTION {word.in}
 { "" }
 
+%V3.0 new, for url in "howpublished"
+FUNCTION {format.howpublished}
+{ howpublished empty$
+    { "" }
+    { "\url{" howpublished * "}" * }
+  if$
+}
+
 FUNCTION {format.date}
 {
   ""
@@ -1302,7 +1310,7 @@ FUNCTION {website}
  format.title "title" output.check
  add.EBOL
  new.sentence
- howpublished "howpublished" bibinfo.check output
+ format.howpublished output
  format.date output
  format.note output
  fin.entry
