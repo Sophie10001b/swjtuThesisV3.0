@@ -49,6 +49,9 @@
 \NewDocumentCommand \songti {}{\CJKfamily{zhsong}}
 \NewDocumentCommand \heiti {}{\CJKfamily{zhhei}}
 
+% 保持url与正文字体一致
+\urlstyle{same}
+
 %-------------------------------------------------------------------------------
 %                标题及版面格式（依照《西南交通大学研究生学位论文撰写规范》 附录）
 %-------------------------------------------------------------------------------
@@ -76,6 +79,7 @@
 \renewcommand\arraystretch{1.3} %表格行间距
 \renewcommand\heavyrulewidth{0.12em} %粗线宽
 \renewcommand\lightrulewidth{0.08em} %细线宽
+\renewcommand\cmidrulewidth{0.05em} %其它分割线宽
 
 %%表内多行内容设置
 % V3.0更改——引入tabularx包以支持表内换行
