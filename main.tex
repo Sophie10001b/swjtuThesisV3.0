@@ -66,12 +66,14 @@
 \include{appendix/remerciement}
 
 % 加载参考文献
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
 \begin{spacing}{1.2} %数字代表行距
 	\setlength{\bibsep}{3pt plus1pt minus1pt}
 	\bibliographystyle{ref/swjtuBST} %定义参考文献列表格式，参考国标文件GB/T 7714-2015制作
 	\bibliography{ref/refEx} %加入参考文献的.bib库，可自行建立替换，refEx为示范文件
 \end{spacing}
-\addcontentsline{toc}{chapter}{参考文献}
 
 % 加载附录文件和个人工作列表
 \include{appendix/appA}						% 非必要章节，主要用以放置测试数据、数学证明或者个人简介
