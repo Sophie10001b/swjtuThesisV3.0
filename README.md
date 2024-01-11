@@ -10,6 +10,10 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.01.11(swjtuBST.bst, main.tex)
+  1. 由于标号均为"[D]"，现在硕士博士学位论文统一基于@thesis进行引用
+  2. 修复了目录中参考文献章节页码的交叉引用问题，之前版本指向参考文献章节的最后一页，最新版本已修正为参考文献章节的首页
+
 - 2024.01.01(swjtuBST.bst, swjtuThesis.cls)
   1. 现在howpublished中的内容会自动被识别为url，无需手动添加\url{}标识，从而可以基于hyperref包进行文献引用中url的自动换行。同时url字体已经被设置为与正文字体保持一致
   2. 补充了三线表中\cmidrule线条的粗细设置选项，现在默认设置为`0.05em`
