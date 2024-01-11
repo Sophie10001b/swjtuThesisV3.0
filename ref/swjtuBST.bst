@@ -1273,22 +1273,6 @@ FUNCTION {manual}
   fin.entry
 }
 
-FUNCTION {mastersthesis}
-{ output.bibitem
-  format.authors "author" output.check
-  new.sentence
-  format.title
-  "title" output.check
-  new.sentence
-  bbl.mthesis format.thesis.type output.nonnull
-  address "address" bibinfo.check output
-  add.colon
-  school "school" bibinfo.warn output
-  format.date "year" output.check
-  format.note output
-  fin.entry
-}
-
 % V3.0 new, a new citation format for custom GB/T citation format
 % author + title + GB/T symbol + extra information
 FUNCTION {freecite}
@@ -1329,7 +1313,7 @@ FUNCTION {misc}
   fin.entry
   empty.misc.check
 }
-FUNCTION {phdthesis}
+FUNCTION {thesis}
 { output.bibitem
   format.authors "author" output.check
   new.sentence
@@ -1442,4 +1426,4 @@ EXECUTE {end.bib}
 %% End of customized bst file
 %%
 
-%% End of file `swjtuJiXu.bst'.
+%% End of file `swjtuBST.bst'.
