@@ -20,7 +20,7 @@
   
 - 2023.12.29(swjtuBST.bst)
   1. 修复了有关学位论文中地点与单位的引用格式设置，目前格式为"address: school"
-  2. 2023.12.29 - 现在文献引用支持自动省略位于前三位作者之后的所有作者，并添加et al.(如果为中文文献，请手动为文献条目中的"language"赋值"zh"，此时et al.会变更为"...等.")
+  2. 现在文献引用支持自动省略位于前三位作者之后的所有作者，并添加et al.(如果为中文文献，请手动为文献条目中的"language"赋值"zh"，此时et al.会变更为"...等.")
   3. 现在Times New Roman中能够正确使用AMS的黑板体，同时在main.tex中新增了调整跨页宽容度的相关设置
   
 - 2023.12.01(package.tex)
@@ -56,7 +56,7 @@ Linux Libertine O
 >  symbol={FreeCite},
 >  freeinfo={TNNLS, 2008, 20(1): 61-80}
 >}
->> **Scarselli F, Gori M, Tsoi A C, Hagenbuchner M, Monfardini G. The graph neural network model [FreeCite]. TNNLS, 2008, 20(1): 61-80.**
+>> **Scarselli F,Gori M,Tsoi A C, et al. The graph neural network model [FreeCite]. TNNLS, 2008, 20(1): 61-80.**
 3. 为自动处理部分引用中可能出现的页码信息缺失情况，模板内新增了函数`freeoutput.pages`用于处理页面信息的输出，目前该函数已经引入到了`@inproceedings`和`@book`引用类型中，包含页面以及不包含页面时的输出效果如下：
 >@inproceedings{vaswani2017Transformer_nopages,
 >  title={Attention is all you need},
@@ -65,7 +65,7 @@ Linux Libertine O
 >  volume={30},
 >  year={2017}
 >}
->> **Vaswani A, Shazeer N, Parmar N, Uszkoreit J, Jones L, Gomez A N, Kaiser Ł, Polosukhin I. Attention is all you need [C]. Advances in neural information processing systems, volume 30, 2017.**
+>> **Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need [C]. Advances in neural information processing systems, volume 30, 2017.**
 
 >@inproceedings{vaswani2017Transformer_pages,
 >  title={Attention is all you need},
@@ -75,5 +75,5 @@ Linux Libertine O
 >  pages={1--11},
 >  year={2017}
 >}
->> **Vaswani A, Shazeer N, Parmar N, Uszkoreit J, Jones L, Gomez A N, Kaiser Ł, Polosukhin I. Attention is all you need [C]. Advances in neural information processing systems, volume 30, 2017: 1–11.**
+>> **Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need [C]. Advances in neural information processing systems, volume 30, 2017: 1–11.**
 4. 部分BUG的修正，比如`@phdthesis`所对应的`add.D`函数中GB/T文献标号的乱码
