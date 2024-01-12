@@ -1,0 +1,169 @@
+%% Paket fuer Logos
+%%
+%% This is file `dtk-logos.sty',
+%%
+%% LaTeX Class for ``Die TeXnische Komoedie''.
+%%
+%% Copyright (C) 2019
+%% Herbert Voss
+%%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%
+%
+% -------------------------------------
+\ProvidesPackage{dtk-logos}[2020/02/02 v. 1.10 Dante Edition: Logos (hv)]
+%
+\newif\if@dtk@newengine \@dtk@newenginetrue 
+\RequirePackage{iftex}
+%
+\ifluatex\else\ifxetex\else\@dtk@newenginefalse\fi\fi
+%
+\RequirePackage{fetamont,hologo,dantelogo,xspace}
+\if@dtk@newengine
+  \RequirePackage{unicode-math}
+  \setmathfont{LatinModernMath-Regular}
+  \setmathfont[version=XITS]{XITSMath-Regular.otf}
+\fi  
+%
+\iffalse
+\DeclareRobustCommand\ffmfamily{\not@math@alphabet\ffmfamily\relax
+  \fontencoding{T1}\fontfamily{ffm}\selectfont}
+\DeclareTextFontCommand{\textffm}{\ffmfamily}
+\def\MF{\textffm{META}\@dischyph\textffm{FONT}\@}
+\def\MP{\textffm{META}\@dischyph\textffm{POST}\@}
+\def\MT{\textffm{META}\@dischyph\textffm{TYPE1}\@}
+\fi
+\def\mpShort{\textffm{MP}\@}
+\def\mfShort{\textffm{MF}\@}
+
+\def\HoLogo@La#1{%
+  L%
+  \ifx\f@family\sfdefault\kern-.15em\else\kern-.23em\fi
+  \begingroup
+    \setbox\ltx@zero\hbox{T}%
+    \vbox to\ht\ltx@zero{%
+      \hbox{%
+        \ltx@ifundefined{check@mathfonts}{%
+          \csname sevenrm\endcsname
+        }{%
+          \check@mathfonts
+          \fontsize\sf@size{0pt}%
+          \math@fontsfalse\selectfont
+        }%
+        A%
+      }%
+      \vss
+    }%
+  \endgroup
+}
+
+
+\def\LaTeXTeX{\hologo{(La)TeX}}
+
+\def\AmS{\textsf{AMS}}
+\let\AMS\AmS
+%{\ifluatex\mathversion{XITS}\fi%
+%     $\mathcal{A}$\kern-.1667em\lower.5ex\hbox{$\mathcal{M}$}\kern-.125em$\mathcal{S}$}}%  $ 
+\def\amsmath{\AMS\textsf{math}}
+\def\AmSLaTeX{\mbox{\textsf{AMS}-\hologo{LaTeX}}}
+\def\AmSTeX{\mbox{\textsf{AMS}-\hologo{TeX}}}
+\def\biber{\hologo{biber}}
+\def\Biber{\Hologo{biber}}
+\def\BibTeX{\@ifnextchar8\@@BibTeX\@BibTeX}
+\def\@BibTeX{{\hologoLogoSetup{BibTeX}{variant=sc}\hologo{BibTeX}}}
+\def\BibTeXacht{{\hologoLogoSetup{BibTeX8}{variant=sc}\hologo{BibTeX8}}}
+\def\@@BibTeX8{{\hologoLogoSetup{BibTeX8}{variant=sc}\hologo{BibTeX8}}}
+\def\ConTeXt{\hologo{ConTeXt}}
+\let\context\ConTeXt
+\def\emTeX{\hologo{emTeX}}
+\def\eTeX{\hologo{eTeX}}
+\def\ExTeX{\hologo{ExTeX}}
+\def\HanTheThanh{\hologo{HanTheThanh}}
+\def\iniTeX{\hologo{iniTeX}}
+\def\KOMAScript{\hologo{KOMAScript}}
+\def\LaTeX{\hologo{LaTeX}}
+\def\LaTeXe{\hologo{LaTeX2e}}
+\def\LaTeXIII{\hologo{LaTeX3}}
+\def\LaTeXML{\hologo{LaTeXML}}
+\def\LuaLaTeX{\hologo{LuaLaTeX}}
+\let\lualatex\LuaLaTeX
+\def\LuaTeX{\hologo{LuaTeX}}
+\let\luatex\LuaTeX
+\def\LyX{\hologo{LyX}}
+\def\METAFONT{\hologo{METAFONT}}
+\let\MF\METAFONT
+\def\MetaFun{\textffm{METAFUN}}
+\let\MFun\MetaFun
+\def\METAPOST{\hologo{METAPOST}}
+\def\MetaPost{\hologo{MetaPost}}
+\let\MP\METAPOST
+\def\MiKTeX{\hologo{MiKTeX}}
+\def\NTS{\hologo{NTS}}
+\def\OzMF{\hologo{OzMF}}
+\def\OzMP{\hologo{OzMP}}
+\def\OzTeX{\hologo{OzTeX}}
+\def\OzTtH{\hologo{OzTtH}}
+\def\PCTeX{\hologo{PCTeX}}
+\def\pdfTeX{\hologo{pdfTeX}}
+\let\pdftex\pdfTeX
+\def\pdfLaTeX{\hologo{pdfLaTeX}}
+\let\pdflatex\pdfLaTeX
+\def\PiC{\hologo{PiC}}
+\def\PiCTeX{\hologo{PiCTeX}}
+\def\plainTeX{\hologo{plainTeX}}
+\def\PostScript{PostScript}
+\let\PS\PostScript
+\def\SageTeX{\hologo{SageTeX}}
+\def\SLiTeX{\hologo{SLiTeX}}
+\def\teTeX{\hologo{teTeX}}
+\def\TeXivht{\hologo{TeX4ht}}
+\def\TTH{\hologo{TTH}}
+\def\virTeX{\hologo{virTeX}}
+\def\VTeX{\hologo{VTeX}}
+\def\XeLaTeX{\hologo{XeLaTeX}}
+\def\XeTeX{\hologo{XeTeX}}
+%%
+%
+\newcommand\BibTool{\textsc{Bib\hskip-.1em
+        T\hskip-.15emo\hskip-.05emo\hskip-.05eml}\xspace}
+\def\tikz{\textsf{Ti\textit{k}Z}}
+\def\ALEPH{\ensuremath{\aleph}}
+\let\TikZ\tikz
+
+\providecommand\eV{e.V\kern-0.18em\@ifnextchar.{}{.}\kern0.18em}
+\providecommand\dante{\mbox{DANTE~\eV}}
+\providecommand\Dante{DANTE,
+  Deutschsprachige Anwendervereinigung \TeX~\eV}
+\providecommand\DTK{Die \TeX\-ni\-sche Ko\-m{\"o}\-die}
+\providecommand\PS{Post\-Script}
+\providecommand\TUG{\TeX{} Users Group}
+\providecommand\TUGboat{\textsl{TUGboat}}
+\let\DANTE\dantelogo
+\def\pgf/tikz{\textsf{pgf/Ti\textit{k}Z}}
+\def\pgftikz{\textsf{pgf/Ti\textit{k}Z}}
+\def\TeXLive{\TeX{}Live\xspace}
+
+\def\BibLaTeX{Bib\hologo{LaTeX}}
+\let\biblatex\BibLaTeX
+\def\CTAN{\texttt{CTAN}\xspace}
+
+\def\PSTricks{\textsf{PSTricks}\xspace}
+\let\pstricks\PSTricks
+
+\if@dtk@newengine
+  \newfontfamily\dtk@LinWikipedia{Linux Libertine O}%
+  \def\WikipediA{{\dtk@LinWikipedia\char"E02F\textsc{ikipediA}}} % hexadezimal
+\else
+  \def\WikipediA{WikipediA}%
+\fi
+\let\wikipedia\WikipediA
+%
+\def\macOS{\textsf{macOS}\xspace}
+
+\endinput
