@@ -10,6 +10,9 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.02.24(conclusion.tex)
+  1. 修复了结论章节在不显示章节号情况下后续小节编号会沿用前一章节编号的问题，若需要结论章节同样显式编号，直接使用\chapter{}替代\chapter*{}命令后将本节中计数器相关命令(\counter)删除即可
+     
 - 2024.01.11(swjtuBST.bst, main.tex)
   1. 由于标号均为"[D]"，现在硕士博士学位论文统一基于@thesis进行引用
   2. 修复了目录中参考文献章节页码的交叉引用问题，之前版本指向参考文献章节的最后一页，最新版本已修正为参考文献章节的首页
