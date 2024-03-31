@@ -10,6 +10,11 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.03.31(package.tex, main.tex, swjtuThesis.cls)
+  1. 重定义了\tiny字体，现在\tiny字体的大小为五号字体(10.5pt)，用于图表相关设置(因为caption包暂不支持ctex的字体设置)，如需要使用\tiny字体，可将此定义移除，并重定义其它字体为五号字体
+  2. 参考已有论文，修改了图表题目的默认设置以及表格字体的默认设置，其中默认字体大小替换为五号(《撰写规范》中并未提及具体的图表字体设置，此设置仅为与已有论文保证一致)
+  3. 微调了section, subsection, subsubsection的下文间距，现在下文间距为弹性设置，理论上可以缓解因标题跨页导致的页面空白
+
 - 2024.02.24(conclusion.tex)
   1. 修复了结论章节在不显示章节号情况下后续小节编号会沿用前一章节编号的问题，若需要结论章节同样显式编号，直接使用\chapter{}替代\chapter*{}命令后将本节中计数器相关命令(\counter)删除即可
      
