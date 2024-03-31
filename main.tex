@@ -51,6 +51,12 @@
 % V3.0更改——调整允许跨页的强度，0--4，越大则更偏向于跨页显示
 \allowdisplaybreaks[4]
 
+% V3.0更改——表格字体默认为五号
+\AtBeginEnvironment{tabular}{\tiny}
+
+% 为了防止影响封面设置，正文表格行距设定被移动至此
+\renewcommand\arraystretch{1.5}
+
 \include{content/chap01}
 \include{content/chap02}
 \include{content/chap03}

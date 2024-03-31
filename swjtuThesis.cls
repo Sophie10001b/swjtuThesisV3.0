@@ -76,7 +76,6 @@
 %%三线表设置
 % V3.0更改——参照SWJTU已发表的硕士论文以及其它高校的论文，优化了三线表格式，增大了表内行距，增加了三线表的线宽
 \RequirePackage{booktabs}
-\renewcommand\arraystretch{1.3} %表格行间距
 \renewcommand\heavyrulewidth{0.12em} %粗线宽
 \renewcommand\lightrulewidth{0.08em} %细线宽
 \renewcommand\cmidrulewidth{0.05em} %其它分割线宽
@@ -90,18 +89,23 @@
 
 % 各章题序及标题：小2号黑体，题序和标题之间空一格，不加标点
 \CTEXsetup[format = {\centering\zihao{-2}\heiti}, nameformat = {}, number = {~\arabic{chapter}~}, titleformat = {}, aftername = {\quad}]{chapter}
-
 \CTEXsetup[beforeskip = {-20pt}, afterskip = {20pt plus 2pt minus 2pt}]{chapter}
 
 % 各节的一级题序及标题：小3号黑体，题序和标题之间空一格，不加标点
 \CTEXsetup[format = {\raggedright\zihao{-3}\heiti}, aftername = {\quad}]{section}
+\CTEXsetup[afterskip = {2.3ex plus .2ex minus .2ex}]{section}
 
 % 各节的二级题序及标题：4号黑体，题序和标题之间空一格，不加标点
 \CTEXsetup[format = {\raggedright\zihao{4}\heiti}, aftername = {\quad}]{subsection}
+\CTEXsetup[afterskip = {1.5ex plus .2ex minus .2ex}]{subsection}
 
 % 各节的三级（及以下）题序、款、项：小4号黑体，缩进两字符与正文相同，题序需要自己加入
 \CTEXsetup[format = {\raggedright\zihao{-4}\heiti}, indent = {2em}]{subsubsection}
+\CTEXsetup[afterskip = {1.5ex plus .2ex minus .2ex}]{subsubsection}
 
+% V3.0更改——\tiny重定义为五号字体
+\RequirePackage{type1cm}
+\renewcommand\tiny{\@setfontsize\tiny{10.5\p@}{12\p@}}
 
 % 目录格式：字体和缩进定义
 \def\@dotsep{0.7}
@@ -114,7 +118,13 @@
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 % 修改公式的编号格式为 章-公式号
-\renewcommand{\theequation}{\thechapter--\arabic{equation}}  
+\renewcommand{\theequation}{\thechapter--\arabic{equation}}
+
+% 图表题注格式宏包（实现《规范》要求的题注格式）
+% V3.0更改——参考兰大等学校的已发表毕业论文格式，多行图表题的行距变更为1.4倍
+\RequirePackage{caption}
+\captionsetup{labelformat=simple, labelsep=quad, font={tiny,stretch=1.4}}
+
 %-------------------------------------------------------------------------------
 %                论文信息（题目、作者、导师、专业、图书信息等）
 %-------------------------------------------------------------------------------
@@ -167,7 +177,6 @@
 	\fancypagestyle{plain}{\pagestyle{fancy}}
 }
 
-
 %-------------------------------------------------------------------------------
 %                封面设计
 %-------------------------------------------------------------------------------
@@ -217,15 +226,15 @@
 				\zihao{3}
                 \linespread{1.75}\selectfont
 				\begin{tabular}{l@{\extracolsep{0.2em}}c}
-					{\songti\cover@grade}    	& \fillinblank{10em}{\@grade}
-						\\
-					{\songti\cover@author}   	& \fillinblank{10em}{\@author}
-						\\
-					{\songti\cover@cDiscipline}	& \fillinblank{10em}{\@cDiscipline\fitDegree}
-						\\
-					{\songti\cover@cMajor}    	& \fillinblank{10em}{\@cMajor}
-						\\
-					{\songti\cover@cTutor}   	& \fillinblank{10em}{\@cTutor}
+						{\songti\cover@grade}    	& \fillinblank{10em}{\@grade}
+							\\
+						{\songti\cover@author}   	& \fillinblank{10em}{\@author}
+							\\
+						{\songti\cover@cDiscipline}	& \fillinblank{10em}{\@cDiscipline\fitDegree}
+							\\
+						{\songti\cover@cMajor}    	& \fillinblank{10em}{\@cMajor}
+							\\
+						{\songti\cover@cTutor}   	& \fillinblank{10em}{\@cTutor}
 				\end{tabular}
 			}
 			\vfill
@@ -275,15 +284,15 @@
 				\zihao{3}
 				\linespread{1.75}\selectfont
 				\begin{tabular}{r@{\extracolsep{0.2em}}l}
-					{\songti\cover@eGrade}    	& {\@gradeN}
-					\\
-					{\songti\cover@eAuthor}   	& {\@eAuthor}
-					\\
-					{\songti\cover@eDiscipline}	& {\eDegree\@eDiscipline}
-					\\
-					{\songti\cover@eMajor}    	& {\@eMajor}
-					\\
-					{\songti\cover@eTutor}   	& {\@eTutor}
+						{\songti\cover@eGrade}    	& {\@gradeN}
+						\\
+						{\songti\cover@eAuthor}   	& {\@eAuthor}
+						\\
+						{\songti\cover@eDiscipline}	& {\eDegree\@eDiscipline}
+						\\
+						{\songti\cover@eMajor}    	& {\@eMajor}
+						\\
+						{\songti\cover@eTutor}   	& {\@eTutor}
 				\end{tabular}
 			}
 			\vfill
