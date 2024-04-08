@@ -281,7 +281,7 @@
 			}
 			\vfill
 			{
-				\zihao{3}
+				\zihao{4}
 				\linespread{1.75}\selectfont
 				\begin{tabular}{r@{\extracolsep{0.2em}}l}
 						{\songti\cover@eGrade}    	& {\@gradeN}
@@ -297,7 +297,7 @@
 			}
 			\vfill
 			{
-				\zihao{3}
+				\zihao{4}
 				{\@eDate}
 			}
 			\end{center}
