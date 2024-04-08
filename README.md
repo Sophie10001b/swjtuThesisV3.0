@@ -10,6 +10,10 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.04.08(swjtuThesis.cfg, swjtuThesis.cls)
+  1. 调整了封面标题的间距，使整体效果与《撰写规范》保持一致
+  2. 参考《撰写规范》，修改了封面各项信息所使用的字号
+
 - 2024.03.31(package.tex, main.tex, swjtuThesis.cls)
   1. 重定义了\tiny字体，现在\tiny字体的大小为五号字体(10.5pt)，用于图表相关设置(因为caption包暂不支持ctex的字体设置)，如需要使用\tiny字体，可将此定义移除，并重定义其它字体为五号字体
   2. 参考已有论文，修改了图表题目的默认设置以及表格字体的默认设置，其中默认字体大小替换为五号(《撰写规范》中并未提及具体的图表字体设置，此设置仅为与已有论文保证一致)
