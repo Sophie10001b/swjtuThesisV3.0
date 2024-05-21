@@ -4,7 +4,7 @@
 :tram: **西南交通大学研究生学位论文LaTeX模板**（支持硕士和博士学位论文）
 
 - swjtuThesisV3.0是在Limin HUANG所开发的swjtuThesis ([https://github.com/Studio513/swjtuThesis](https://github.com/Studio513/swjtuThesis)) 以及Hao WANG所提供的swjtuThesis V2.0([https://github.com/cshaowang/swjtuThesisV2.0](https://github.com/cshaowang/swjtuThesisV2.0)) 上作的修订，原因是由于目前的swjtuThesis模板中的版面设置、对macOS的支持以及对不同文献引用格式的支持仍存在进一步优化的空间。V3.0整体上基于《西南交通大学研究生学位论文撰写规范》(以下简称《撰写规范》)([https://gsnews.swjtu.edu.cn/info/1102/4733.htm](https://gsnews.swjtu.edu.cn/info/1102/4733.htm)) 以及之前的swjtuThesis版本完成开发
-- **目前swjtuThesis V3.0仍然处在Demo阶段，在作者本人的论文通过最终审查之前，本模板的相关设置有极大概率被进一步更改与优化，直至最后形成正式的V3.0版本**
+- **目前作者本人学位论文已通过审核，swjtuThesis V3.0已基本完善，后续需求可以通过Issues提交，或直接构建/发布新模板。希望能有更多的同学加入到LaTeX模板的使用、维护与更新之中！**
 - 商业用途，请务必联系swjtuThesis开发者 (联系方式见swjtuThesis的托管网站)
 - Windows 11 已测试编译环境：Tex Live 2021 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
