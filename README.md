@@ -10,6 +10,9 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.05.22(swjtuThesis.cfg, swjtuThesis.cls, info.tex)
+  1. 依据论文存档要求，封面时间格式更改为年+月
+
 - 2024.04.08(swjtuThesis.cfg, swjtuThesis.cls)
   1. 调整了封面标题的间距，使整体效果与《撰写规范》保持一致
   2. 参考《撰写规范》，修改了封面各项信息所使用的字号
