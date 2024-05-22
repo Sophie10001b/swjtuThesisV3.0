@@ -41,7 +41,22 @@
 
 % 引用文献宏包natbib
 %               上标	方括号	逗号分隔	自动排序分类
-\RequirePackage[super,square,comma,sort&compress]{natbib}
+\usepackage[super,square,comma,sort&compress]{natbib}
+% V3.0更改——[1,2]等间隔1位的连续引用同样压缩为[1-2]
+\makeatletter
+\patchcmd{\NAT@citexnum}
+  {%
+    \ifx\NAT@last@yr\relax
+      \def@NAT@last@yr{\@citea}%
+    \else
+      \def@NAT@last@yr{--\NAT@penalty}%
+    \fi
+  }
+  {%
+    \def@NAT@last@yr{--\NAT@penalty}%
+  }
+  {}{\FAIL}
+\makeatother
 
 % 颜色控制宏包
 \usepackage{color,xcolor}
