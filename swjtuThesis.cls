@@ -152,8 +152,8 @@
 \newcommand{\CI}[1]{\def\@CI{#1}}
 \newcommand{\UDC}[1]{\def\@UDC{#1}}
 \newcommand{\secLevel}[1]{\def\@secLevel{#1}}
-\newcommand{\cDate}[3]{\def\@cDate{\dateprint{#1}{#2}{#3}}}
-\newcommand{\eDate}[3]{\def\@eDate{\dateprintE{#1}{#2}{#3}}}
+\newcommand{\cDate}[2]{\def\@cDate{\dateprint{#1}{#2}}}
+\newcommand{\eDate}[2]{\def\@eDate{\dateprintE{#1}{#2}}}
 
 %-------------------------------------------------------------------------------
 %                页眉及页脚
