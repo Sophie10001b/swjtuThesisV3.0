@@ -1,0 +1,95 @@
+%---------------------------------------------------------------------------------
+%                西南交通大学研究生学位论文：第一章内容
+%---------------------------------------------------------------------------------
+
+\chapter{模板介绍}
+
+\LaTeX{}~作为一种具有标记语言(markup language)特色的排版系统(word processors)，不同于Microsoft Office Word\textsuperscript{\textregistered}、Apple Pages\textsuperscript{\textregistered}等目前常用的“所见即所得”(what you see is what you get, WYSIWYG)形式页面排版软件，得益于标记语言的特点，其对数学公式、矢量图表、参考文献、交叉引用、格式统一等有着更为良好的支持和表现效果，常应用于在科学研究领域。诸多科技出版社(如Springer\footnote{更多信息请参阅Springer出版社书籍投稿说明：\url{https://www.springer.com/gp/authors-editors/book-authors-editors/manuscript-preparation/5636}}、Elsevier\footnote{更多信息请参阅Elsevier出版社采用\LaTeX{}投稿科学书籍的指南：\url{https://www.elsevier.com/authors/author-schemas/latex-instructions}}等公开出版的学术书籍)，科学期刊杂志(如IEEE Transactions系列汇刊\footnote{IEEE论文投稿页面中提供了涵盖了几乎所有汇刊适用的\LaTeX{}模板资源：\url{https://www.ieee.org/publications_standards/publications/authors/author_templates.html}})，国、内外高等学府的学位论文\footnote{\LaTeX 开源小屋网站上提供了许多高校的模板供下载使用：\url{http://www.latexstudio.net}}均有提供现成~\LaTeX{}~模板供作者使用。
+
+\par
+\textbf{swjtuThesis正是为了能够让更多的交大学生接触并了解~\LaTeX{}，同时能够更为方便地使用~\LaTeX{}~进行研究生学位论文撰写的西南交通大学研究生学位论文~\LaTeX{}~模板}。本模板严格依照《西南交通大学研究生学位论文撰写规范》\footnote{详细信息请参阅西南交通大学研究生院网站页面：\url{http://gs.swjtu.edu.cn/ws/gs/r/719}}进行开发，但由于个人水平有限，难免存在不足之处，欢迎大家积极反馈在使用过程中遇到的问题，或者是对swjtuThesis模板的开发建议，同时也希望能在众多交大~\LaTeX{}~爱好者的努力下，一同完善本模板，受益更多的交大同学。
+
+
+\section{模板获取}
+
+\textbf{swjtuThesisV3.0基于swjtuThesisV1.0~\footnote{swjtuThesisV1.0: \url{https://github.com/Studio513/swjtuThesis}}以及swjtuThesisV2.0~\footnote{swjtuThesisV2.0: \url{https://github.com/cshaowang/swjtuThesisV2.0}}进行修订（尤其是页面效果设置、三线表设置、行距设置、Mac系统兼容性设置以及参考文献格式的兼容性优化）}。swjtuThesisV3.0（以下简称swjtuThesis或V3.0）模板的所有源代码和资源均作为开源项目的形式托管于GitHub仓库之中，链接地址如下
+\par
+\begin{center}
+	\url{https://github.com/Sophie10001b/swjtuThesisV3.0}
+\end{center}
+\par
+\textbf{通过GitHub直接下载是目前获取swjtuThesis模板及后续更新的稳定途径之一}。目前的swjtuThesis V3.0模板仍然处于Demo阶段，在作者本人的论文通过最终审查前，本模板的相关设置有极大概率被进一步的更改与优化，直至最后形成正式的V3.0版本。特别说明，本模板尚未取得西南交通大学学校方面的认证。V3.0仍是一个处在开发与更新之中的版本。欢迎大家的反馈意见和更新，以及基于当前版本直接推出优化后的新版本，一起推动~\LaTeX{}~在研究生学位论文写作中的普及。
+
+\section{开发环境}
+
+\LaTeX{}~开发环境可以灵活地在Windows、Mac OS及Linux/Ubuntu等主流操作系统中进行配置，对于初学者而言，推荐采用\textbf{~\TeX~发行版}(distribution)配合\textbf{~\TeX~编辑器}(integrated writing environment)的方式进行撰写和开发。
+
+\par
+\textbf{对于~\TeX~发行版的选择}，Windows操作系统下推荐使用CTeX中文套装(最新版本：CTeX 2.9.2.164\footnote{CTeX下载地址：\url{http://www.ctex.org/CTeXDownload}})或者TeX Live套装(最新版本：TeX Live 2020\footnote{TeX Live下载地址：\url{https://www.tug.org/texlive/}})；Linux系统下同样推荐使用TeX Live套装(最新版本：TeX Live 2020)；Mac系统下推荐使用MacTeX(最新版本：MacTeX-2020\footnote{MacTeX下载地址：\url{https://tug.org/mactex/}})。
+
+\par
+\textbf{对于~\TeX~编辑器的选择}，TeXStudio\footnote{TeXStudio下载地址：\url{http://www.ctex.org/CTeXDownload}}和Texmaker\footnote{Texmaker下载地址：\url{https://www.tug.org/texlive/}}均是Windows端的免费的~\LaTeX{}~开发利器，其代码高亮、代码补全、字典功能均比较完善，此外用户可以选择使用WinEdt\footnote{WinEdt官方网站：\url{http://www.winedt.com/}}，这是一款功能强大的~\TeX~商业编辑器软件，不过CTex中内置了这款编辑器；Linux系统下同样推荐使用TeXStudio或者Texmaker；Mac系统下的~\TeX~编辑器选择要更为多样，出了之前推荐的之外还有像Texpad\footnote{Texpad官方网站：\url{https://www.texpadapp.com/osx}}之类Mac系统独占的专业~\TeX~编辑器。
+
+\par
+\textbf{swjtuThesis模板所采用的开发环境为}：TeX Live 2020 + TeXStudio + XeLaTeX。
+
+\par
+\textbf{swjtuThesis V3.0目前已经额外在macOS中通过编译测试，注意在macOS下需要额外下载缺失的字体文件。macOS下模板所采用的开发环境为}：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX。
+
+\section{模板构成}
+
+西南交通大学研究生学位论文\textbf{swjtuThesis模板中包含的关键文件说明如下}：
+
+\par
+\begin{itemize}
+  \item \textbf{main.tex}：主文件，\textbf{撰写完成后编译该文件即可产生学位论文.pdf全文}；
+  \item \textbf{main.pdf}：即当前.pdf文档，也即是\textbf{最终的论文文档}，通过编译main.tex产生；
+  \item \textbf{swjtuThesis.cls}：文档类文件，基于ctexbook文档类修改，\textbf{不建议用户修改}；
+  \item \textbf{swjtuThesis.cfg}：文档类文件的配置文件，用于字符串定义，\textbf{不建议用户修改}；
+  \item \textbf{swjtuBST.bst}：文献引用输出的格式控制文件，用于定义文献引用的输出样式，\textbf{不建议用户修改}；
+\end{itemize}
+
+\par
+此外，在使用过程中将会产生如.aux、.bbl、.log、.out等后缀的文件，均属于~\LaTeX{}~编译过程的正常文件，请用户不要擅自删除或者修改。
+
+\par
+swjtuThesis模板中的文件夹目录信息如表\ref{tab_1_1_files}所示。其中，注明\textbf{无需修改}字样的文件为模板已经写好的文件，非特殊情况下不建议用户进行修改；注明\textbf{用户修改}字样的文件请用户自行根据文件中的注释提示予以录入信息，详细的模板使用方法请见第二部分；注明\textbf{用户撰写}字样的文件为空白文件，需要用户自行根据自己的论文需求进行撰写（包括了各章节的内容、致谢、附录、科研成果等等）；对于学位论文中所引用全部的参考文献，推荐用户构建~\BibTeX~文献库，并将.bib库文件放置于ref文件夹中，并在main.tex文件中予以调用，即可在swjtuThesis模板中实现对需要的参考文献进行引用，更多关于如何使用~\BibTeX~管理参考文献的使用实例请见第二部分；最后，本模板虽然已经能够实现根据用户输入的信息自行判断学位论文的\textbf{硕、博士}类型，但是关于\textbf{《博士创新声明》}及\textbf{《硕士主要工作》}文件请用户自行打开相应.tex文件在用户撰写区中进行修改。
+
+\begin{table}[htbp]
+	\setlength{\abovecaptionskip}{0pt}
+	\setlength{\belowcaptionskip}{0pt}\
+	\caption{swjtuThesis模板文件夹构成}
+	\label{tab_1_1_files}
+	\centering
+	\begin{tabular}{llll}
+		\toprule
+		文件夹 & 文件 & 作用说明 & 使用说明 \\
+		\midrule
+		\multirow{3}{*}{\centering setup\textbackslash{}:} & info.tex & 录入论文信息 & \textbf{用户修改} \\
+		& type.tex & 判定论文种类 & \textbf{无需修改} \\
+	    & package.tex & 增加使用宏包 & \textbf{用户修改} \\
+	    \midrule
+	    \multirow{5}{*}{\centering preface\textbackslash{}:} & copyright.tex & 学位论文版权授权书 & \textbf{无需修改} \\
+	    & statementDoctor.tex & 博士学位论文创新声明 & \textbf{博士修改} \\
+	    & statementMaster.tex & 硕士学位论文主要工作 & \textbf{硕士修改} \\
+	    & cabstract.tex & 中文摘要 & \textbf{用户撰写} \\
+	    & eabstract.tex & 英文摘要 & \textbf{用户撰写} \\
+	    \midrule
+	    \multirow{2}{*}{\centering content\textbackslash{}:} & chapN.tex & 第N章内容 & \textbf{用户撰写} \\
+	    & conclusion.tex & 结论 & \textbf{用户撰写} \\
+	    \midrule
+	    \multirow{3}{*}{\centering appendix\textbackslash{}:} & remerciement.tex & 致谢 & \textbf{用户撰写} \\
+	    & appX.tex & 附录 & \textbf{用户撰写} \\
+	    & myWork.tex & 科研成果 & \textbf{用户撰写} \\
+	    \midrule
+	    \multirow{2}{*}{\centering ref\textbackslash{}:} & chinesebst.bst & 参考文献样式文件 & \textbf{无需修改} \\
+	    & refEx.bib & 参考文献~\BibTeX~数据库 & \textbf{用户录入}\\
+	    \midrule
+	    figures\textbackslash{}: &  & 放置论文插图 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+
