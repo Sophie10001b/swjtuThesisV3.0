@@ -10,6 +10,9 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
+- 2024.07.27
+  1. **依据2024年发布的新规范([https://gsnews.swjtu.edu.cn/info/1063/8744.htm](https://gsnews.swjtu.edu.cn/info/1063/8744.htm))对原模板进行了初步调整**。目前相关间距设定仍有进一步调整与对齐的空间，后续可能会不定时根据issuse中的问题进行进一步调整
+
 - 2024.05.22(swjtuThesis.cfg, swjtuThesis.cls, info.tex, package.tex)
   1. 依据论文存档要求，封面时间格式更改为年+月
   2. 基于引用格式要求，修改natbib的连续引用设置，使其能够将[1,2]表述为[1-2]
