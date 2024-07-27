@@ -27,30 +27,24 @@
 \UDC{004.8}
 % 保密等级
 \secLevel{公开}
+% 单位代码
+\UCODE{10613}
 
 %----------------------------
 % 学生信息
 % 中英文姓名
-%\author{作\quad 者}
-%\eAuthor{Author Name}
-\author{\#\quad \#} % 盲审使用 \author{\#\#\#}
+\cAuthor{\#\quad \#} % 盲审使用 \author{\#\#\#}
 \eAuthor{\#\#\#} % 盲审使用 \eAuthor{\#\#\#}
-
-% 年级
-\grade{20XX}
-\gradeN{20XX}
-
-% 学科（工学、理学、社会学，etc）
-\cDiscipline{} % 留空
-\eDiscipline{Philosophy}
 
 % 专业（10个汉字以内）
 % 请注意：对于超过10个汉字的专业，比如“防灾减灾工程及防护工程”，目前排版仍然不够美观，正在修正。
 %        也请相应专业的同学提供过往师兄的硕士论文以供参考。
-%\cMajor{专业名称}
-%\eMajor{Major Name}
-\cMajor{计算机科学与技术}
-\eMajor{Computer Science and Technology}
+\cDiscipline{计算机科学与技术}
+\eDisciplineFirst{Computer Science and} % 第一行
+\eDisciplineSecond{Technology} % 第二行，可为空
+
+% 学号
+\studentID{1111223333}
 
 % 导师（10个汉字以内）
 % 请注意：导师姓名和导师的职称之间加上\hspace{0.1em}以增大间距，整体显得更为美观。 
@@ -59,6 +53,11 @@
 \cTutor{***} % \cTutor{***\hspace{0.1em} 教授}, 盲审使用-> \cTutor{***}
 \eTutor{***} % \eTutor{Professor ***}, 盲审使用-> \eTutor{***}
 
-% 封面日期，依次为年，月
-\cDate{二零XX}{X} % 大写，例如，{二零二四}{五}
-\eDate{20XX}{Month} % 例如，{2024}{May}
+% 学院
+\cSchool{计算机与人工智能学院}
+\eSchoolFirst{School of Computing and} % 第一行
+\eSchoolSecond{Artificial Intelligence} % 第二行，可为空
+
+% 封面日期，依次为年，月，日
+\cDate{2024}{7}{4}
+\eDate{2024}{Jul.}{4} % 例如，{2024}{May}
