@@ -26,7 +26,7 @@
 % 论文前言（包括中、英文摘要及目录，页码为罗马数字，在研究生论文目录中不显示摘要）
 \frontmatter
 \pagenumbering{Roman}
-\thesispagestyle{-4}{西南交通大学\cDegree{}研究生学位论文}{第~\thepage~页}	% 页眉设置
+\thesispagestyle{\leftmark}{\thepage}	% 页眉设置
 
 % 加载中文摘要
 \pdfbookmark[0]{中英文摘要}{Abstract}
@@ -42,7 +42,7 @@
 %---------------------------------------------------------------------------------
 % 学位论文正文（包含各章节内容和结论，页码为阿拉伯数字）
 \mainmatter
-\thesispagestyle{-4}{西南交通大学\cDegree{}研究生学位论文}{第~\thepage~页}	% 页眉设置
+\thesispagestyle{西南交通大学硕/博士学位论文}{\thepage}	% 页眉设置
 
 % 加载论文正文（第1章 - 第N章、结论）
 % 目前共有四个章节文件，用户可以自行在content/:文件夹中添加chap0X.tex文件
@@ -54,8 +54,12 @@
 % V3.0更改——表格字体默认为五号
 \AtBeginEnvironment{tabular}{\tiny}
 
-% 为了防止影响封面设置，正文表格行距设定被移动至此
-\renewcommand\arraystretch{1.5}
+% 为了防止影响封面设置，正文图表题间距设定与被移动至此
+% \renewcommand\arraystretch{1.5}
+\setlength{\belowcaptionskip}{6pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{12pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
 
 \include{content/chap01}
 \include{content/chap02}

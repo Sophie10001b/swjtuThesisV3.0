@@ -57,20 +57,18 @@
 %-------------------------------------------------------------------------------
 % 版面上空25.4 mm，下空25.4 mm，左空 26.0 mm，右空 26.0 mm
 % V3.0更改——依据《撰写规范》，版面上空25.4 mm，下空25.4 mm，左空 26.0 mm，右空 26.0 mm；版心尺寸：宽 160mm，高 250mm。然而此设置下会超过A4纸版面，因此仅需设置页边距，忽略版心设置
-% 为了更加贴近《撰写规范》中提供的示例，下页边距微调至32.0 mm，并使用geometry宏包控制版面
+% 依据2024新规范，四个方向的页边距均统一为30.0 mm，并进行微调以匹配模板
 \RequirePackage{geometry}
-\geometry{a4paper, top=25.4mm, bottom=32.0mm, left=26.0mm, right=26.0mm} 
-% \RequirePackage{anysize}
-% \papersize{29.7cm}{21.0cm}
-% \marginsize{26.0mm}{26.0mm}{25.4mm}{25.4mm}
+\geometry{a4paper, top=34mm, bottom=41mm, left=30mm, right=30mm}
 
 %%段落间距
 %\setlength{\parskip}{3pt plus1pt minus2pt}  % 段落之间的竖直距离
 
-%%行间距
-% \setlength{\baselineskip}{20pt plus 2pt minus 2pt} %段落内的行距
+%行间距
+% 依据2024新规范，行间距均统一为20pt
+\setlength{\baselineskip}{20pt plus 2pt minus 2pt} %段落内的行距
 % V3.0更改——直接控制基础的行距倍数为1.4倍，配合前面的页面设置可以使得单页的行数正好为《撰写规范》内建议的34行
-\renewcommand{\baselinestretch}{1.4}        % 定义行距
+% \renewcommand{\baselinestretch}{1.4}        % 定义行距
 %\linespread{1.35}  % 设置行距
 
 %%三线表设置
@@ -87,21 +85,21 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
-% 各章题序及标题：小2号黑体，题序和标题之间空一格，不加标点
-\CTEXsetup[format = {\centering\zihao{-2}\heiti}, nameformat = {}, number = {~\arabic{chapter}~}, titleformat = {}, aftername = {\quad}]{chapter}
-\CTEXsetup[beforeskip = {-20pt}, afterskip = {20pt plus 2pt minus 2pt}]{chapter}
+% 各章题序及标题：3号黑体，题序和标题之间空一格，不加标点
+\CTEXsetup[format = {\centering\zihao{3}\heiti}, name = {第,章}, nameformat = {}, number = {\arabic{chapter}}, numberformat = {}, titleformat = {}, aftername = {\hspace{0.6\ccwd}}]{chapter}
+\CTEXsetup[beforeskip = {0pt}, afterskip = {18pt plus 2pt minus 2pt}]{chapter}
 
-% 各节的一级题序及标题：小3号黑体，题序和标题之间空一格，不加标点
-\CTEXsetup[format = {\raggedright\zihao{-3}\heiti}, aftername = {\quad}]{section}
-\CTEXsetup[afterskip = {2.3ex plus .2ex minus .2ex}]{section}
+% 各节的一级题序及标题：4号黑体，题序和标题之间空一格，不加标点
+\CTEXsetup[format = {\raggedright\zihao{4}\heiti}, aftername = {\hspace{0.6\ccwd}}, numberformat = {\bfseries}]{section}
+\CTEXsetup[beforeskip = {18pt plus 2pt minus 2pt}, afterskip = {6pt plus 2pt minus 2pt}]{section}
 
 % 各节的二级题序及标题：4号黑体，题序和标题之间空一格，不加标点
-\CTEXsetup[format = {\raggedright\zihao{4}\heiti}, aftername = {\quad}]{subsection}
-\CTEXsetup[afterskip = {1.5ex plus .2ex minus .2ex}]{subsection}
+\CTEXsetup[format = {\raggedright\zihao{4}\heiti}, aftername = {\hspace{0.6\ccwd}}, numberformat = {\bfseries}]{subsection}
+\CTEXsetup[beforeskip = {12pt plus 2pt minus 2pt}, afterskip = {6pt plus 2pt minus 2pt}]{subsection}
 
-% 各节的三级（及以下）题序、款、项：小4号黑体，缩进两字符与正文相同，题序需要自己加入
-\CTEXsetup[format = {\raggedright\zihao{-4}\heiti}, indent = {2em}]{subsubsection}
-\CTEXsetup[afterskip = {1.5ex plus .2ex minus .2ex}]{subsubsection}
+% 各节的三级（及以下）题序、款、项：小4号黑体，题序和标题之间空一格，不加标点
+\CTEXsetup[format = {\raggedright\zihao{-4}\heiti}, aftername = {\hspace{0.6\ccwd}}, numberformat = {\bfseries}]{subsubsection}
+\CTEXsetup[beforeskip = {12pt plus 2pt minus 2pt}, afterskip = {6pt plus 2pt minus 2pt}]{subsubsection}
 
 % V3.0更改——\tiny重定义为五号字体
 \RequirePackage{type1cm}
@@ -121,28 +119,27 @@
 \renewcommand{\theequation}{\thechapter--\arabic{equation}}
 
 % 图表题注格式宏包（实现《规范》要求的题注格式）
-% V3.0更改——参考兰大等学校的已发表毕业论文格式，多行图表题的行距变更为1.4倍
 \RequirePackage{caption}
-\captionsetup{labelformat=simple, labelsep=quad, font={tiny,stretch=1.4}}
+\captionsetup{labelformat=simple, labelsep=quad, font={tiny}}
 
 %-------------------------------------------------------------------------------
 %                论文信息（题目、作者、导师、专业、图书信息等）
 %-------------------------------------------------------------------------------
-
-% 申请学位级别
-\newcommand{\cDiscipline}[1]{\def\@cDiscipline{#1}}
-\newcommand{\eDiscipline}[1]{\def\@eDiscipline{#1}}
 
 % 论文中英题目
 \newcommand{\cTitle}[1]{\def\@cTitle{#1}}
 \newcommand{\eTitle}[1]{\def\@eTitle{#1}}
 
 % 论文作者信息
-\newcommand{\grade}[1]{\def\@grade{#1}}
-\newcommand{\gradeN}[1]{\def\@gradeN{#1}}
+\newcommand{\cAuthor}[1]{\def\@cAuthor{#1}}
 \newcommand{\eAuthor}[1]{\def\@eAuthor{#1}}
-\newcommand{\cMajor}[1]{\def\@cMajor{#1}}
-\newcommand{\eMajor}[1]{\def\@eMajor{#1}}
+\newcommand{\cDiscipline}[1]{\def\@cDiscipline{#1}}
+\newcommand{\eDisciplineFirst}[1]{\def\@eDisciplineFirst{#1}}
+\newcommand{\eDisciplineSecond}[1]{\def\@eDisciplineSecond{#1}}
+\newcommand{\studentID}[1]{\def\@studentID{#1}}
+\newcommand{\cSchool}[1]{\def\@cSchool{#1}}
+\newcommand{\eSchoolFirst}[1]{\def\@eSchoolFirst{#1}}
+\newcommand{\eSchoolSecond}[1]{\def\@eSchoolSecond{#1}}
 
 % 论文导师信息
 \newcommand{\cTutor}[1]{\def\@cTutor{#1}}
@@ -152,30 +149,30 @@
 \newcommand{\CI}[1]{\def\@CI{#1}}
 \newcommand{\UDC}[1]{\def\@UDC{#1}}
 \newcommand{\secLevel}[1]{\def\@secLevel{#1}}
-\newcommand{\cDate}[2]{\def\@cDate{\dateprint{#1}{#2}}}
-\newcommand{\eDate}[2]{\def\@eDate{\dateprintE{#1}{#2}}}
+\newcommand{\UCODE}[1]{\def\@UCODE{#1}}
+\newcommand{\cDate}[3]{\def\@cDate{\dateprint{#1}{#2}{#3}}}
+\newcommand{\eDate}[3]{\def\@eDate{\dateprintE{#1}{#2}{#3}}}
 
 %-------------------------------------------------------------------------------
 %                页眉及页脚
 %-------------------------------------------------------------------------------
-% 文武线设计
 % V3.0更改——为了更接近《撰写规范》中的效果，将文武线的细线宽从0.5pt缩小至0.4pt，将粗细线间距从0.6pt扩大至0.8pt
+% 依据2024新规范，页眉修改为单横线0.75磅，要求内写明页眉使用5号字体，但实际使用的似乎是小五
 \renewcommand{\headrule}{
-	\hrule width \hsize height 2pt \vspace{0.8pt} \hrule width \hsize height 0.4pt
-}
-\renewcommand{\footrule}{
-	\hrule width \hsize height 0.4pt \vspace{0.8pt} \hrule width \hsize height 2pt
+	\hrule width \hsize height 0.75pt
 }
 
 % 自定义页眉
-\newcommand{\thesispagestyle}[3]{
+\newcommand{\thesispagestyle}[2]{
 	\pagestyle{fancy}
 	\fancyhf{}
-	\fancyhead[C]{\zihao{-4}\heiti #2}
-	\fancyhead[OR,EL]{\zihao{-4}\heiti #3}
-	\fancyfoot[C]{}
+	\fancyhead[OC,EC]{\zihao{-5}\songti #1}
+	\fancyfoot[C]{\zihao{-5} #2}
 	\fancypagestyle{plain}{\pagestyle{fancy}}
 }
+
+\setlength{\headsep}{3.5mm}
+\setlength{\footskip}{16mm}
 
 %-------------------------------------------------------------------------------
 %                封面设计
@@ -193,30 +190,36 @@
 		\linespread{1}
 		\begin{flushleft}
 		{
+			\setstretch{1.4}
 			\zihao{-4}
-			{\songti\cover@CI}\@CI\hfill{\songti\cover@secLevel}\@secLevel
+			{\songti\cover@CI}\fillinblank{8em}{\centering\@CI}\hfill{\songti\cover@secLevel}\fillinblank{8em}{\centering\@secLevel}
 			\\
-			{\songti\cover@UDC}\@UDC
+			{\songti\cover@UDC}\fillinblank{8em}{\centering\@UDC}\hfill{\songti\cover@UCODE}\fillinblank{6em}{\centering\@UCODE}
 			\\
-			}	
+		}	
 		\end{flushleft}
 		\linespread{1.5}
-		\vspace{10mm}
+		\vspace{60pt}
 		\begin{center}
 			{
-				\zihao{2}
-				{\textbf{\songti\cover@cSchool}}\\
-				\vspace{3mm}
-				{\textbf{\songti\cover@cThesis}}
+				{\textbf{\zihao{1}\heiti\cover@cUniversity}}\\
+				\vspace{6mm}
+				{
+					\ifdegreedoctor
+					{\textbf{\zihao{2}\songti\cover@cThesisD}}
+					\else
+					{\textbf{\zihao{2}\songti\cover@cThesisM}}
+					\fi
+				}
+				\vspace{10pt}
 			}
-			
 			\vfill
 			{
-				\zihao{2}
+				\zihao{-2}
 				\linespread{1.3}\selectfont
 				\makebox[0pt]{
 					\begin{minipage}{18em}
-						\centering\heiti\@cTitle
+						\centering\heiti\CJKunderline{\@cTitle}
 					\end{minipage}
 				}
 			}
@@ -226,16 +229,17 @@
 				\zihao{3}
                 \linespread{1.75}\selectfont
 				\begin{tabular}{l@{\extracolsep{0.2em}}c}
-						{\songti\cover@grade}    	& \fillinblank{10em}{\@grade}
+						{\songti\cover@cDiscipline}    	& \fillinblank{10em}{\@cDiscipline}
 							\\
-						{\songti\cover@author}   	& \fillinblank{10em}{\@author}
+						{\songti\cover@cStudentID}    	& \fillinblank{10em}{\@studentID}
 							\\
-						{\songti\cover@cDiscipline}	& \fillinblank{10em}{\@cDiscipline\fitDegree}
-							\\
-						{\songti\cover@cMajor}    	& \fillinblank{10em}{\@cMajor}
+						{\songti\cover@cAuthor}   	& \fillinblank{10em}{\@cAuthor}
 							\\
 						{\songti\cover@cTutor}   	& \fillinblank{10em}{\@cTutor}
+							\\
+						{\songti\cover@cSchool}   	& \fillinblank{10em}{\@cSchool}
 				\end{tabular}
+				\vspace{10pt}
 			}
 			\vfill
 			{
@@ -246,72 +250,66 @@
 		
 		% 英文封面
 		\clearpagebyprint
-		\linespread{1}
-		\begin{flushleft}
-			\zihao{-4}
-			{\songti\cover@eCI}\@CI
-			\\
-			{\songti\cover@eUDC}\@UDC
-			\\	
-		\end{flushleft}
 		\linespread{1.5}
-		\vspace{10mm}
 		\begin{center}
-			{
-				\zihao{-2}
-				{\songti\cover@eSchool}\\
-				\vspace{3mm}
-				{
-					\ifdegreedoctor
-					{\songti\cover@eThesisD}
-					\else
-					{\songti\cover@eThesisM}
-					\fi
-				}
-			}
-			\vfill
+			\begin{minipage}[c]{26em}
+				\zihao{4}
+				\linespread{1.2}\selectfont
+				\centering
+				\vspace{20pt}
+				\ifdegreedoctor
+				{\textbf{\cover@eDiscriptionD}}
+				\else
+				{\textbf{\cover@eDiscriptionM}}
+				\fi
+			\end{minipage}
+		\end{center}
+		\vspace{100pt}
+		\begin{center}
 			{
 				\zihao{2}
 				\linespread{1.3}\selectfont
 				\makebox[0pt][c]{
 					\begin{minipage}[c]{23em}
-						\centering\@eTitle
+						\centering\textbf{\@eTitle}
 					\end{minipage}
 				}
+				\vspace{20pt}
 			}
 			\vfill
 			{
-				\zihao{4}
+				\zihao{3}
 				\linespread{1.75}\selectfont
 				\begin{tabular}{r@{\extracolsep{0.2em}}l}
-						{\songti\cover@eGrade}    	& {\@gradeN}
+					{\cover@eDiscipline}    	& \fillinblank{12em}{\@eDisciplineFirst}
 						\\
-						{\songti\cover@eAuthor}   	& {\@eAuthor}
+					\ifx\@eDisciplineSecond\empty\else {}& \fillinblank{12em}{\@eDisciplineSecond}\\ \fi
+					{\cover@eStudentID}    	& \fillinblank{12em}{\@studentID}
 						\\
-						{\songti\cover@eDiscipline}	& {\eDegree\@eDiscipline}
+					{\cover@eAuthor}   	& \fillinblank{12em}{\@eAuthor}
 						\\
-						{\songti\cover@eMajor}    	& {\@eMajor}
+					{\cover@eTutor}   	& \fillinblank{12em}{\@eTutor}
 						\\
-						{\songti\cover@eTutor}   	& {\@eTutor}
+					{\cover@eSchool}   	& \fillinblank{12em}{\@eSchoolFirst}
+					\ifx\@eSchoolSecond\empty\else \\ {}& \fillinblank{12em}{\@eSchoolSecond} \fi
 				\end{tabular}
 			}
 			\vfill
 			{
-				\zihao{4}
+				\zihao{3}
 				{\@eDate}
 			}
 			\end{center}
+
+			% 加载学位论文主要工作（贡献）声明
+			{
+				\include{preface/statement}
+			}
 			
 			% 加载学位论文版权使用授权书
-			\include{preface/copyright}
-			
-			% 加载学位论文主要工作（贡献）声明
-			\ifdegreedoctor
-				\include{preface/statementDoctor}
-			\else
-				\include{preface/statementMaster}
-			\fi
-			
+			{
+				\include{preface/copyright}
+			}
 	\end{titlepage}
 }
 
@@ -319,22 +317,22 @@
 %-------------------------------------------------------------------------------
 %                中、英文摘要格式定义
 %-------------------------------------------------------------------------------
-\newcommand{\baseabstract}[4]{
+\newcommand{\baseabstract}[5]{
     \chapter*{#1}
-    %\addcontentsline{toc}{chapter}{#1}
-    #3
+	\markboth{#2}{#2}
+    #4
 	\vspace{0.5cm}
-    {\noindent \zihao{-4}{#2}#4}
+    {\noindent \zihao{-4}{#3}#5}
 }
 
 % 中文摘要
 \newcommand{\cabstract}[2]{
-    \baseabstract{\other@cabstract}{\heiti\other@keywords}{#1}{#2}
+    \baseabstract{\other@cabstract}{摘\quad 要}{\heiti\other@keywords}{#1}{#2}
 }
 
 % 英文摘要
 \newcommand{\eabstract}[2]{
-    \baseabstract{\bf Abstract}{\bf Key words: }{#1}{#2}
+    \baseabstract{\bf Abstract}{ABSTRACT}{\bf Key words: }{#1}{#2}
 }
 
 %-------------------------------------------------------------------------------
@@ -344,17 +342,19 @@
 \newcounter{pubctr} 						
 % 定义新环境
 \newenvironment{publist}{
+	\zihao{5}
+	\setlength{\baselineskip}{16pt plus 2pt minus 2pt}
 	\begin{list}{[\arabic{pubctr}]} 		%%标签格式
 		{
 			\usecounter{pubctr}
 			\setlength{\leftmargin}{1.7em}	% 左边界 \leftmargin =\itemindent + \labelwidth + \labelsep
-			\setlength{\itemindent}{0em}    % 标号缩进量
+			\setlength{\itemindent}{4\ccwd}    % 标号缩进量
 			\setlength{\labelsep}{0.5em}    % 标号和列表项之间的距离,默认0.5em
 			\setlength{\rightmargin}{0em}   % 右边界
-			\setlength{\topsep}{0ex}        % 列表到上下文的垂直距离
-			\setlength{\parsep}{0ex}        % 段落间距
+			% \setlength{\topsep}{0ex}        % 列表到上下文的垂直距离
+			% \setlength{\parsep}{0ex}        % 段落间距
 			\setlength{\itemsep}{0.5ex}       % 标签间距
-			\setlength{\listparindent}{0pt} % 段落缩进量
+			\setlength{\listparindent}{0ex} % 段落缩进量
 		}}
 		{\end{list}}
 
