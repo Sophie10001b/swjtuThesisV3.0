@@ -59,24 +59,26 @@
 % V3.0更改——依据《撰写规范》，版面上空25.4 mm，下空25.4 mm，左空 26.0 mm，右空 26.0 mm；版心尺寸：宽 160mm，高 250mm。然而此设置下会超过A4纸版面，因此仅需设置页边距，忽略版心设置
 % 依据2024新规范，四个方向的页边距均统一为30.0 mm，并进行微调以匹配模板
 \RequirePackage{geometry}
-\geometry{a4paper, top=34mm, bottom=41mm, left=30mm, right=30mm}
+\geometry{a4paper, top=35mm, bottom=35mm, left=30mm, right=30mm}
 
 %%段落间距
 %\setlength{\parskip}{3pt plus1pt minus2pt}  % 段落之间的竖直距离
 
 %行间距
 % 依据2024新规范，行间距均统一为20pt
-\setlength{\baselineskip}{20pt plus 2pt minus 2pt} %段落内的行距
+% \setlength{\baselineskip}{24pt} %段落内的行距
 % V3.0更改——直接控制基础的行距倍数为1.4倍，配合前面的页面设置可以使得单页的行数正好为《撰写规范》内建议的34行
-% \renewcommand{\baselinestretch}{1.4}        % 定义行距
+
+% 依据2024新规范，行间距均统一为1.35倍(word版本测试结果为每页最大33行)
+\renewcommand{\baselinestretch}{1.35}        % 定义行距
 %\linespread{1.35}  % 设置行距
 
 %%三线表设置
 % V3.0更改——参照SWJTU已发表的硕士论文以及其它高校的论文，优化了三线表格式，增大了表内行距，增加了三线表的线宽
 \RequirePackage{booktabs}
-\renewcommand\heavyrulewidth{0.12em} %粗线宽
-\renewcommand\lightrulewidth{0.08em} %细线宽
-\renewcommand\cmidrulewidth{0.05em} %其它分割线宽
+\renewcommand\heavyrulewidth{1.5pt} %粗线宽
+\renewcommand\lightrulewidth{1pt} %细线宽
+\renewcommand\cmidrulewidth{0.7pt} %其它分割线宽
 
 %%表内多行内容设置
 % V3.0更改——引入tabularx包以支持表内换行
@@ -120,7 +122,7 @@
 
 % 图表题注格式宏包（实现《规范》要求的题注格式）
 \RequirePackage{caption}
-\captionsetup{labelformat=simple, labelsep=quad, font={tiny}}
+\captionsetup{labelformat=simple, labelsep=quad, font={tiny,stretch=1.4}}
 
 %-------------------------------------------------------------------------------
 %                论文信息（题目、作者、导师、专业、图书信息等）
@@ -171,8 +173,8 @@
 	\fancypagestyle{plain}{\pagestyle{fancy}}
 }
 
-\setlength{\headsep}{3.5mm}
-\setlength{\footskip}{16mm}
+\setlength{\headsep}{4mm}
+\setlength{\footskip}{10mm}
 
 %-------------------------------------------------------------------------------
 %                封面设计

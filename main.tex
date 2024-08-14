@@ -15,6 +15,10 @@
 \input{setup/type}    			% 区分硕博类型（模板自动区分，在info.tex中进行设置）
 \input{setup/package}			% 加载使用宏包
 
+% 调整浮动体与文字间距
+\setlength{\textfloatsep}{10pt}
+\setlength{\intextsep}{10pt}
+\setlength{\floatsep}{10pt}
 
 \begin{document}
 
@@ -55,11 +59,8 @@
 \AtBeginEnvironment{tabular}{\tiny}
 
 % 为了防止影响封面设置，正文图表题间距设定与被移动至此
+% 新模版中明确规定单倍行距
 % \renewcommand\arraystretch{1.5}
-\setlength{\belowcaptionskip}{6pt plus 2pt minus 2pt}
-\setlength{\abovecaptionskip}{12pt plus 2pt minus 2pt}
-\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
-\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
 
 \include{content/chap01}
 \include{content/chap02}
