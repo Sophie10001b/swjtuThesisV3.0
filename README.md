@@ -10,7 +10,7 @@
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 
 :computer: **更新日志**
-- 2024.08.14
+- 2024.08.14(swjtuThesis.cls, main.tex)
   1. 继续微调了正文中页眉页脚距离、页边距以及基础行距，目前单页最大行数与官方word文档一致(经测试为33行)，同时调整了图表等浮动体与上下文的间距
 
 - 2024.07.27
