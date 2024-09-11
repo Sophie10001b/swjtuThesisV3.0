@@ -329,12 +329,12 @@
 
 % 中文摘要
 \newcommand{\cabstract}[2]{
-    \baseabstract{\other@cabstract}{摘\quad 要}{\heiti\other@keywords}{#1}{#2}
+    \baseabstract{摘\quad 要}{摘\quad 要}{\textbf{关键词：}}{#1}{#2}
 }
 
 % 英文摘要
 \newcommand{\eabstract}[2]{
-    \baseabstract{\bf Abstract}{ABSTRACT}{\bf Key words: }{#1}{#2}
+    \baseabstract{\bf Abstract}{ABSTRACT}{\bf Keywords: }{#1}{#2}
 }
 
 %-------------------------------------------------------------------------------
