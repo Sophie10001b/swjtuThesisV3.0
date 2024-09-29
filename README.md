@@ -8,6 +8,7 @@
 - 商业用途，请务必联系swjtuThesis开发者 (联系方式见swjtuThesis的托管网站)
 - Windows 11 已测试编译环境：Tex Live 2021 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
+- Tips: 若每页段落间距不一致，可以尝试在页面中添加\raggedbottom命令来将间距集中在页面底部，并基于此策略调整内容排版
 
 :computer: **更新日志**
 - 2024.09.11(swjtuThesis.cls, swjtuThesis.cfg, cabstract.tex, eabstract.tex)
