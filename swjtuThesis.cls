@@ -323,6 +323,7 @@
     \chapter*{#1}
 	\markboth{#2}{#2}
     #4
+	\par
 	\vspace{0.5cm}
     {\noindent \zihao{-4}{#3}#5}
 }
