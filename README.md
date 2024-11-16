@@ -11,7 +11,7 @@
 - Tips: 若每页段落间距不一致，可以尝试在页面中添加\raggedbottom命令来将间距集中在页面底部，并基于此策略调整内容排版
 
 :computer: **更新日志**
-- 2024.11.16(swjtuThesis.cls, cabstract.tex eabstract.tex)
+- 2024.11.16(swjtuThesis.cls, cabstract.tex, eabstract.tex)
   1. 现在\baseabstract命令内于摘要正文与关键字之间包含了换行命令\par，修复了由于摘要正文输入中最后未手动换行导致正文与关键字未分行的问题
 
 - 2024.09.11(swjtuThesis.cls, swjtuThesis.cfg, cabstract.tex, eabstract.tex)
