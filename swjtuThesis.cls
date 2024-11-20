@@ -42,10 +42,15 @@
 \RequirePackage{ifthen}
 
 % V3.0更改——手动设置字体
-% 参考设置：macOS Sonoma 14.1.1，需额外手动下载SimSun，SimHei，Latin Modern Math，Linux Libertine O这四种字体
-\setCJKmainfont[BoldFont=SimHei]{SimSun}
-\setCJKfamilyfont{zhsong}{SimSun}
-\setCJKfamilyfont{zhhei}{SimHei}
+% \setCJKmainfont[BoldFont=SimHei]{SimSun}
+% \setCJKfamilyfont{zhsong}{SimSun}
+% \setCJKfamilyfont{zhhei}{SimHei}
+% \NewDocumentCommand \songti {}{\CJKfamily{zhsong}}
+% \NewDocumentCommand \heiti {}{\CJKfamily{zhhei}}
+
+\setCJKmainfont[Path=./font/, BoldFont=simhei.ttf]{simsun.ttf}
+\setCJKfamilyfont{zhsong}[Path=./font/]{simhei.ttf}
+\setCJKfamilyfont{zhhei}[Path=./font/]{simhei.ttf}
 \NewDocumentCommand \songti {}{\CJKfamily{zhsong}}
 \NewDocumentCommand \heiti {}{\CJKfamily{zhhei}}
 
