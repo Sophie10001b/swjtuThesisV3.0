@@ -8,9 +8,14 @@
 - 商业用途，请务必联系swjtuThesis开发者 (联系方式见swjtuThesis的托管网站)
 - Windows 11 已测试编译环境：Tex Live 2021 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
 - macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
+- overleaf 已测试编译环境：XeLaTeX 2024 :dolphin:
 - Tips: 若每页段落间距不一致，可以尝试在页面中添加\raggedbottom命令来将间距集中在页面底部，并基于此策略调整内容排版
+- Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2024.11.20(swjtuThesis.cls)
+  1. 内置了sim_sun以及sim_hei字体文件，现在模板会直接调用目录下的自带中文字体，方便在macOS以及overleaf上直接编译
+
 - 2024.11.16(swjtuThesis.cls, cabstract.tex, eabstract.tex)
   1. 现在\baseabstract命令内于摘要正文与关键字之间包含了换行命令\par，修复了由于摘要正文输入中最后未手动换行导致正文与关键字未分行的问题
 
