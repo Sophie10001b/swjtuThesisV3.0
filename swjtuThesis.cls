@@ -298,7 +298,8 @@
 					{\cover@eTutor}   	& \fillinblank{12em}{\@eTutor}
 						\\
 					{\cover@eSchool}   	& \fillinblank{12em}{\@eSchoolFirst}
-					\ifx\@eSchoolSecond\empty\else \\ {}& \fillinblank{12em}{\@eSchoolSecond} \fi
+					\\
+					\ifx\@eSchoolSecond\empty\else {}& \fillinblank{12em}{\@eSchoolSecond} \fi
 				\end{tabular}
 			}
 			\vfill
