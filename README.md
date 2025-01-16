@@ -7,7 +7,7 @@
 - **目前作者本人学位论文已通过审核，swjtuThesis V3.0已基本完善，后续需求可以通过Issues提交，或直接构建/发布新模板。希望能有更多的同学加入到LaTeX模板的使用、维护与更新之中！**
 - 商业用途，请务必联系swjtuThesis开发者 (联系方式见swjtuThesis的托管网站)
 - Windows 11 已测试编译环境：Tex Live 2021 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
-- macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX :dolphin:
+- macOS Sonoma 已测试编译环境：MacTeX 2023 + VSCode(LaTeX Workshop) + XeLaTeX (or latexmk) :dolphin:
 - overleaf 已测试编译环境：XeLaTeX 2024 :dolphin:
 - Tips: 若每页段落间距不一致，可以尝试在页面中添加\raggedbottom命令来将间距集中在页面底部，并基于此策略调整内容排版
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
