@@ -13,6 +13,9 @@
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2025.01.16(main.tex)
+  1. 参考部分其它模板的设置，修改了参考文献跨页设置(\interlinepenalty=10000)，现在参考文献会优先选择不跨页显示
+
 - 2024.11.20(swjtuThesis.cls)
   1. 内置了sim_sun以及sim_hei字体文件，现在模板会直接调用目录下的自带中文字体，方便在macOS以及overleaf上直接编译
 
