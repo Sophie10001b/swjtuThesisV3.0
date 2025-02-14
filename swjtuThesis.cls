@@ -49,7 +49,7 @@
 % \NewDocumentCommand \heiti {}{\CJKfamily{zhhei}}
 
 \setCJKmainfont[Path=./font/, BoldFont=simhei.ttf]{simsun.ttf}
-\setCJKfamilyfont{zhsong}[Path=./font/]{simhei.ttf}
+\setCJKfamilyfont{zhsong}[Path=./font/]{simsun.ttf}
 \setCJKfamilyfont{zhhei}[Path=./font/]{simhei.ttf}
 \NewDocumentCommand \songti {}{\CJKfamily{zhsong}}
 \NewDocumentCommand \heiti {}{\CJKfamily{zhhei}}
