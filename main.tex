@@ -78,6 +78,11 @@
 
 % 加载参考文献
 \clearpage
+\makeatletter
+	\renewcommand\@biblabel[1]{[#1]\hfill\hspace{0.5em}}
+	\renewcommand{\bibfont}{\tiny}
+\makeatother
+
 % 参考文献不分页
 \interlinepenalty=10000
 \phantomsection
