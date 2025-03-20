@@ -76,6 +76,8 @@
 % 英文采用Times New Rome字体（建议把这个宏包放在最后避免发生宏包冲突）
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
+% 数学公式字体依据要求统一为Cambria Math
+\setmathfont[Path=./font/]{Cambria Math.ttf}
 % V3.0更改——Times New Roman下强制使用AMS中的黑板体
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 % 不需要设置CJKmainfont，ctex 宏包已经很好的处理了

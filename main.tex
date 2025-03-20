@@ -58,6 +58,12 @@
 % V3.0更改——表格字体默认为五号
 \AtBeginEnvironment{tabular}{\tiny}
 
+% 更改数学公式上下间距，目前统计将数学环境前后间距，以及多行数学公式间距设置为6磅
+\setlength\abovedisplayskip{6pt}
+\setlength\belowdisplayskip{6pt}
+\setlength\abovedisplayshortskip{6pt}
+\setlength\belowdisplayshortskip{6pt}
+
 % 为了防止影响封面设置，正文图表题间距设定与被移动至此
 % 新模版中明确规定单倍行距
 % \renewcommand\arraystretch{1.5}

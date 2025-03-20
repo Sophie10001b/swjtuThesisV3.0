@@ -142,6 +142,8 @@ swjtuThesis模板的信息录入主要包括\textbf{学位论文基本信息}以
 	这是使用\verb|@inproceedings{vaswani2017Transformer_nopages}|的引用效果，注意此时的会议引用不包含页码信息\cite{vaswani2017Transformer_nopages}，而在包含页码信息时，\verb|@inproceedings|与\verb|@book|已经能够支持无页码信息和有页码信息间引用格式的自动切换，注意此时使用\verb|@inproceedings{vaswani2017Transformer_pages}|的引用效果\cite{vaswani2017Transformer_pages}。
 \end{framed}
 
+另外值得注意的是，由于\verb|@mthesis|和\verb|@phdthesis|使用的文献类型标号均为\verb|[D]|，因此本模板均使用\verb|@thesis|进行替代，比如~\cite{徐泽楷2019}。如果不习惯目前的引用格式的话，可以直接换用"gbt7714-bibtex-style"宏包对引用格式进行管理\footnote{\url{https://github.com/zepinglee/gbt7714-bibtex-style}}。
+
 \section{模板编译}
 依次执行XeLaTeX，BibTeX，XeLaTeX，XeLaTeX四次编译即可生成最终的学位论文.pdf文件。
 

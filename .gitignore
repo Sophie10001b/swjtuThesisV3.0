@@ -1,0 +1,13 @@
+*.aux
+*.bbl
+*.blg
+*.bbl
+*.fdb*
+*.log
+*.out
+*.thm
+*.toc
+*.xdv
+*.fls
+*.synctex*
+.DS_store
