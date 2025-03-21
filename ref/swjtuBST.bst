@@ -812,7 +812,7 @@ FUNCTION {format.vol.num.pages}
 { volume field.or.null
   duplicate$ empty$ 'skip$
     {
-      "volume" bibinfo.check
+      % "volume" bibinfo.check
     }
   if$
   number "number" bibinfo.check duplicate$ empty$ 'skip$
@@ -1219,7 +1219,17 @@ FUNCTION {inproceedings}
   new.sentence
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
-      format.bvolume output
+      % 修改这里的 volume 和 number 输出格式
+      volume empty$
+        'skip$
+        { ", " * 
+          volume * 
+          number empty$
+            'skip$
+            { "(" * number * ")" * }
+          if$
+        }
+      if$
       format.number.series output
       publisher empty$
         { format.organization.address output }
