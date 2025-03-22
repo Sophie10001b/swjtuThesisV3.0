@@ -13,6 +13,9 @@
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2025.03.22(swjtuBST.bst)
+  1. 补上了bib thesis类引用缺失的页码
+
 - 2025.03.20(main.tex, package.tex)
   1. 在示例中新增了对硕博学位论文引用的说明
   2. 依据模版要求，现在数学公式主要字体修改为Cambria Math (已集成至font/*)，同时暂时统一调整数学环境前后间距至6磅

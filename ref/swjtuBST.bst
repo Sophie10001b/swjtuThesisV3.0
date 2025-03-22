@@ -1325,6 +1325,7 @@ FUNCTION {thesis}
   add.colon
   school "school" bibinfo.warn output
   format.date "year" output.check
+  freeoutput.pages
   format.note output
   fin.entry
 }
