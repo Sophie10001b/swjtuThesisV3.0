@@ -15,6 +15,7 @@
 :computer: **更新日志**
 - 2025.03.22(swjtuBST.bst)
   1. 补上了bib thesis类引用缺失的页码
+  2. 修正了会议论文volume和number的显式格式
 
 - 2025.03.20(main.tex, package.tex)
   1. 在示例中新增了对硕博学位论文引用的说明
