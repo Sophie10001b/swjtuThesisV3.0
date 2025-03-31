@@ -69,21 +69,24 @@
 % \renewcommand\arraystretch{1.5}
 
 \include{content/chap01}
+\cleardoublepage
 \include{content/chap02}
+\cleardoublepage
 \include{content/chap03}
+\cleardoublepage
 \include{content/chap04}
-
+\cleardoublepage
 % 加载论文结论
 \include{content/conclusion}
-
+\cleardoublepage
 %---------------------------------------------------------------------------------
 % 论文附录（包括致谢、参考文献、证明、工作列表）
 
 % 加载致谢文件
 \include{appendix/remerciement}
+\cleardoublepage
 
 % 加载参考文献
-\clearpage
 % 标号变更为左对齐，同时扩大标号与内容间距
 \makeatletter
 	\renewcommand\@biblabel[1]{[#1]\hfill\hspace{0.5em}}
@@ -99,9 +102,11 @@
 	\bibliographystyle{ref/swjtuBST} %定义参考文献列表格式，参考国标文件GB/T 7714-2015制作
 	\bibliography{ref/refEx} %加入参考文献的.bib库，可自行建立替换，refEx为示范文件
 \end{spacing}
+\cleardoublepage
 
 % 加载附录文件和个人工作列表
-\include{appendix/appA}						% 非必要章节，主要用以放置测试数据、数学证明或者个人简介
+\include{appendix/appA}					% 非必要章节，主要用以放置测试数据、数学证明或者个人简介
+\cleardoublepage
 \include{appendix/myWork}					% 攻读硕（博）士论文攻读期间取得的科研成果，论文、专利等
 
 \end{document}
