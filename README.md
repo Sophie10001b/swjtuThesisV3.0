@@ -13,6 +13,9 @@
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2025.03.31(main.tex)
+  1. 由于section未触发ctexbook的每章首页自动调整至奇数的功能，因此在每章节input后手动添加了\cleardoublepage命令，保证章节首页位于奇数页
+
 - 2025.03.22(swjtuBST.bst)
   1. 补上了bib thesis类引用缺失的页码
   2. 修正了会议论文volume和number的显式格式
