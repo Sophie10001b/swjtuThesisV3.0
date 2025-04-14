@@ -116,7 +116,7 @@
 \def\@dotsep{0.7}
 \renewcommand*\l@chapter{\heiti\@dottedtocline{0}{0em}{3em}}
 \renewcommand*\l@section{\songti\@dottedtocline{1}{1.75em}{2.05em}}
-\renewcommand*\l@subsection{\songti\@dottedtocline{2}{2.5em}{2.5em}}
+\renewcommand*\l@subsection{\songti\@dottedtocline{2}{4.0em}{2.5em}}
 
 % 修改图和表的题注格式为 章-图表号
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}}

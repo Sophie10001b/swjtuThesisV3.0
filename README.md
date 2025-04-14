@@ -13,6 +13,9 @@
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2025.04.14(swjtuThesis.cls)
+  1. 微调了目录章节中subsection的缩进，使整体缩进更加接近于原始模板的效果
+
 - 2025.03.31(main.tex)
   1. 由于section未触发ctexbook的每章首页自动调整至奇数的功能，因此在每章节input后手动添加了\cleardoublepage命令，保证章节首页位于奇数页
 
