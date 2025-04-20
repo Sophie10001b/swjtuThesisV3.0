@@ -75,8 +75,8 @@
 % V3.0更改——直接控制基础的行距倍数为1.4倍，配合前面的页面设置可以使得单页的行数正好为《撰写规范》内建议的34行
 
 % 依据2024新规范，行间距均统一为1.35倍(word版本测试结果为每页最大33行)
-\renewcommand{\baselinestretch}{1.35}        % 定义行距
-%\linespread{1.35}  % 设置行距
+% \renewcommand{\baselinestretch}{1.35}        % 定义行距
+\linespread{1.35}  % 设置行距
 
 %%三线表设置
 % V3.0更改——参照SWJTU已发表的硕士论文以及其它高校的论文，优化了三线表格式，增大了表内行距，增加了三线表的线宽
@@ -127,7 +127,8 @@
 
 % 图表题注格式宏包（实现《规范》要求的题注格式）
 \RequirePackage{caption}
-\captionsetup{labelformat=simple, labelsep=quad, font={tiny,stretch=1.4}}
+\captionsetup[figure]{aboveskip=12pt, belowskip=6pt, labelformat=simple, labelsep=quad, font={tiny}}
+\captionsetup[table]{aboveskip=6pt, belowskip=12pt, labelformat=simple, labelsep=quad, font={tiny}}
 
 %-------------------------------------------------------------------------------
 %                论文信息（题目、作者、导师、专业、图书信息等）
