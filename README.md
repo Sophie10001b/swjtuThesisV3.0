@@ -13,6 +13,9 @@
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2025.05.30(swjtuThesis.cls, package.tex)
+  1. 重新定义了`emptypage`宏包的实现效果，目前设置为在第一章之前的摘要目录部分偶数页填充为纯空白页，在正文开始后偶数页填充为带页眉页脚的空页(通过`\mainmatter`控制)
+
 - 2025.04.19(main.tex, swjtuThesis.cls, package.tex)
   1. 单独修改并扩大了文献引用页面的间距，目前引用页面整体行数保持与word版本一致
   2. 单独设置了图题与表题的前后间距

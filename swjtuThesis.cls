@@ -183,6 +183,64 @@
 \setlength{\footskip}{10mm}
 
 %-------------------------------------------------------------------------------
+%                单双页空页设置
+%-------------------------------------------------------------------------------
+\RequirePackage{emptypage}
+\newif\if@mainmatter % 标记是否进入正文部分
+\@mainmatterfalse    % 默认前言状态
+
+% 定义两种空白页策略
+\def\emptypage@trueempty{%
+  \hbox{}%
+  \thispagestyle{empty}% % 完全空白页
+  \newpage%
+  \if@twocolumn%
+    \hbox{}%
+    \newpage%
+  \fi%
+}
+\def\emptypage@headerempty{%
+  \hbox{}%
+  \thispagestyle{plain}% % 带页眉页脚的空白页
+  \newpage%
+  \if@twocolumn%
+    \hbox{}%
+    \newpage%
+  \fi%
+}
+
+\DeclareOption{odd}{%
+  \def\cleardoublepage{%
+    \clearpage%
+    \if@twoside%
+      \ifodd\c@page%
+	    % do nothing
+	  \else%
+        \if@mainmatter%
+			\emptypage@headerempty% % 正文部分：带页眉页脚的空白页
+		\else%
+			\emptypage@trueempty%   % 前言部分：完全空白页
+		\fi%
+      \fi%
+    \fi%
+  }%
+}
+\DeclareOption{even}{%
+  \def\cleardoublepage{%
+    \clearpage%
+    \if@twoside%
+      \ifodd\c@page%
+        \if@mainmatter%
+			\emptypage@headerempty% % 正文部分：带页眉页脚的空白页
+		\else%
+			\emptypage@trueempty%   % 前言部分：完全空白页
+		\fi%
+      \fi%
+    \fi%
+  }%
+}
+
+%-------------------------------------------------------------------------------
 %                封面设计
 %-------------------------------------------------------------------------------
 %为了使封面适应双面打印, 可使用\clearpagebyprint命令(同时类参数需指定为twoside)		
@@ -372,7 +430,8 @@
 %                加载字符串配置文件
 %-------------------------------------------------------------------------------
 \AtEndOfClass{\input{swjtuThesis.cfg}}
-
+\ExecuteOptions{odd}
+\ProcessOptions
 \endinput
 
 %% end of file `SWJTU_Thesis.cls'.
