@@ -124,11 +124,11 @@ swjtuThesis模板的信息录入主要包括\textbf{学位论文基本信息}以
 本节最后，给出一段用~\BibTeX{}~实现参考文献插入的实例：
 
 \begin{framed}
-	电磁学作为物理学的一个重要分支，主要研究自然界中四种基本相互作用之一的电磁力，其基本数学描述以及物理框架早于1873年在J. C. Maxwell的经典著作\cite{Maxwell1873}中所奠定。一百多年来，经历了在数代科学家的传承和不断探索\textsuperscript{\cite{Stratton1941,Cheng1989,Jackson1999,Guru2004,Kong2008,Griffiths2012,Purcell2013,Ida2015}}，电磁科学技术的研究和应用都到达了一个前所未有的高度。
+	电磁学作为物理学的一个重要分支，主要研究自然界中四种基本相互作用之一的电磁力，其基本数学描述以及物理框架早于1873年在J. C. Maxwell的经典著作\cite{Maxwell1873}中所奠定。一百多年来，经历了在数代科学家的传承和不断探索\cite{Stratton1941,Cheng1989,Jackson1999,Guru2004,Kong2008,Griffiths2012,Purcell2013,Ida2015}，电磁科学技术的研究和应用都到达了一个前所未有的高度。
 	
-	作为当下电磁学前沿技术应用研究之一的\textbf{非接触电能传输技术}，其本质上是一种借助于空间无形软介质(如磁场、电场、激光、微波等)实现将电能由能量发射端通过非接触的形式传递至能量拾取端的全新电能供给模式\textsuperscript{\cite{黄学良2013}}。目前，在现阶段近距离的大功率非接触能量传输的研究及应用中，普遍使用磁场感应式电能传输技术(Inductive Power Transfer, IPT)\textsuperscript{\cite{covic2013inductive}}。
+	作为当下电磁学前沿技术应用研究之一的\textbf{非接触电能传输技术}，其本质上是一种借助于空间无形软介质(如磁场、电场、激光、微波等)实现将电能由能量发射端通过非接触的形式传递至能量拾取端的全新电能供给模式\cite{黄学良2013}。目前，在现阶段近距离的大功率非接触能量传输的研究及应用中，普遍使用磁场感应式电能传输技术(Inductive Power Transfer, IPT)\cite{covic2013inductive}。
 	
-	应用在轨道交通牵引供电系统中，IPT技术与传统架空网、三轨、储能式等物理接触供电方式相比存在着十分明显的优点：无接触火花及触电危险，无积尘和接触损耗，无机械磨损，可适应多种恶劣天气环境(如下雪和积水)。综上，\textbf{IPT技术有望成为未来轨道交通牵引供电方式的重要发展方向之一}，近年来，包括西南交通大学智能化牵引供电课题组在内的各国科研究团队逐渐投入对基于IPT技术的非接触牵引供电系统研究\textsuperscript{\cite{Buja2015,Kim2015}}。
+	应用在轨道交通牵引供电系统中，IPT技术与传统架空网、三轨、储能式等物理接触供电方式相比存在着十分明显的优点：无接触火花及触电危险，无积尘和接触损耗，无机械磨损，可适应多种恶劣天气环境(如下雪和积水)。综上，\textbf{IPT技术有望成为未来轨道交通牵引供电方式的重要发展方向之一}，近年来，包括西南交通大学智能化牵引供电课题组在内的各国科研究团队逐渐投入对基于IPT技术的非接触牵引供电系统研究\cite{Buja2015,Kim2015}。
 \end{framed}
 
 \par
@@ -140,6 +140,10 @@ swjtuThesis模板的信息录入主要包括\textbf{学位论文基本信息}以
 	这是使用\verb|@article{scarselli2008GNN_article}|的引用效果\cite{scarselli2008GNN_article}，此时使用的是默认的\verb|@article|函数。接下来改用\verb|@freecite{scarselli2008GNN_freecite}|来实现相似的效果，注意此时已经通过\textbf{symbol}和\textbf{freeinfo}完成了对GB/T文献类型标志（\textbf{[FreeCite]}）和文献相关信息（\textbf{TNNLS}）的自定义\cite{scarselli2008GNN_freecite}。
 
 	这是使用\verb|@inproceedings{vaswani2017Transformer_nopages}|的引用效果，注意此时的会议引用不包含页码信息\cite{vaswani2017Transformer_nopages}，而在包含页码信息时，\verb|@inproceedings|与\verb|@book|已经能够支持无页码信息和有页码信息间引用格式的自动切换，注意此时使用\verb|@inproceedings{vaswani2017Transformer_pages}|的引用效果\cite{vaswani2017Transformer_pages}。
+
+	这是用于测试引用换行策略的填充内容，排版下标点符号不位于行首\cite{clevert2015ELU,scarselli2008GNN_article,scarselli2008GNN_freecite,vaswani2017Transformer_nopages,vaswani2017Transformer_pages}，其中CJK相关包可能无法控制natbib的行为。
+
+	这是用于测试标准情况下换行策略的填充内容，默认xeCJK可直接处理，无需额外操作。
 \end{framed}
 
 另外值得注意的是，由于\verb|@mthesis|和\verb|@phdthesis|使用的文献类型标号均为\verb|[D]|，因此本模板均使用\verb|@thesis|进行替代，比如~\cite{徐泽楷2019}。如果不习惯目前的引用格式的话，可以直接换用"gbt7714-bibtex-style"宏包对引用格式进行管理\footnote{\url{https://github.com/zepinglee/gbt7714-bibtex-style}}。

@@ -58,9 +58,12 @@
   {}{\FAIL}
 \makeatother
 
-% 去除natbib上标引用后的空格间隙
+% 去除natbib上标引用后的空格间隙，同时限制之后字符的换行行为，从而保证标点不出现在下一句句首
 \let\oldcite\cite
-\renewcommand{\cite}[1]{\oldcite{#1}\hspace{0pt}}
+\renewcommand{\cite}[2]{%
+  \ifhmode\unskip\nobreak\fi
+  \hbox{{\oldcite{#1}\hspace{0pt}}#2}%
+}
 
 \let\oldbibliography\thebibliography
 \renewcommand{\thebibliography}[1]{%
