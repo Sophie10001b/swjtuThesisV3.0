@@ -127,8 +127,22 @@
 
 % 图表题注格式宏包（实现《规范》要求的题注格式）
 \RequirePackage{caption}
-\captionsetup[figure]{aboveskip=12pt, belowskip=6pt, labelformat=simple, labelsep=quad, font={tiny}}
-\captionsetup[table]{aboveskip=6pt, belowskip=12pt, labelformat=simple, labelsep=quad, font={tiny}}
+
+% 可选左右缩进4字符，由于aboveskip & belowskip失效，因此直接使用vspace近似
+\newlength\figindent  \setlength\figindent{4\ccwd}
+\DeclareCaptionFormat{figformat}{
+  \centering
+	\vspace{1pt}
+	% \begin{minipage}{\linewidth - 2\figindent}
+	\begin{minipage}{\linewidth}
+	\centering
+    #1#2#3
+  \end{minipage}
+  \vspace{1pt}
+}
+
+\captionsetup[figure]{format=figformat, aboveskip=12pt, belowskip=6pt, labelformat=simple, labelsep=quad, font={tiny, stretch=1.35}}
+\captionsetup[table]{format=figformat, aboveskip=6pt, belowskip=12pt, labelformat=simple, labelsep=quad, font={tiny, stretch=1.35}}
 
 %-------------------------------------------------------------------------------
 %                论文信息（题目、作者、导师、专业、图书信息等）
