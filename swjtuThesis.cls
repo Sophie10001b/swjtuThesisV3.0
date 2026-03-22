@@ -125,24 +125,39 @@
 % 修改公式的编号格式为 章-公式号
 \renewcommand{\theequation}{\thechapter--\arabic{equation}}
 
-% 图表题注格式宏包（实现《规范》要求的题注格式）
 \RequirePackage{caption}
 
-% 可选左右缩进4字符，由于aboveskip & belowskip失效，因此直接使用vspace近似
-\newlength\figindent  \setlength\figindent{4\ccwd}
-\DeclareCaptionFormat{figformat}{
-  \centering
-	\vspace{1pt}
-	% \begin{minipage}{\linewidth - 2\figindent}
-	\begin{minipage}{\linewidth}
-	\centering
-    #1#2#3
-  \end{minipage}
-  \vspace{1pt}
+% 图表题注格式宏包（实现《规范》要求的题注格式），多行图表题左右额外缩进居中
+% from issue https://github.com/Sophie10001b/swjtuThesisV3.0/issues/35
+
+% 提前计算好 4 个外层汉字的宽度，复刻 margin 的原生逻辑
+\newlength{\mycaptionmargin}
+\setlength{\mycaptionmargin}{4\ccwd}
+
+% 自定义标题格式：先按整行测量，再决定是否缩进
+\DeclareCaptionFormat{customformat}{%
+\sbox0{#1#2#3}%
+\ifdim \wd0 > \linewidth
+% 超过一行时：使用预先计算好的外层字宽进行左右缩进
+\leftskip=\mycaptionmargin
+\rightskip=\mycaptionmargin
+\parindent=0pt % 确保段首不会有额外缩进
+\begin{minipage}{\linewidth - 2\mycaptionmargin}
+#1#2#3\par
+\end{minipage}
+\vspace{1pt}
+\else
+% 没有超过一行时：直接居中
+\begin{minipage}{\linewidth}
+\centering #1#2#3\par
+\end{minipage}
+\vspace{1pt}
+\fi
 }
 
-\captionsetup[figure]{format=figformat, aboveskip=12pt, belowskip=6pt, labelformat=simple, labelsep=quad, font={tiny, stretch=1.35}}
-\captionsetup[table]{format=figformat, aboveskip=6pt, belowskip=12pt, labelformat=simple, labelsep=quad, font={tiny, stretch=1.35}}
+\captionsetup[figure]{format=customformat, aboveskip=12pt, belowskip=6pt, labelformat=simple, labelsep=quad, font={tiny, singlespacing}}
+\captionsetup[table]{format=customformat, aboveskip=6pt, belowskip=12pt, labelformat=simple, labelsep=quad, font={tiny, singlespacing}}
+
 
 %-------------------------------------------------------------------------------
 %                论文信息（题目、作者、导师、专业、图书信息等）
