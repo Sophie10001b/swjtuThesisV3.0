@@ -13,6 +13,9 @@
 - Tips: 注意在overleaf以及本地编译时选择**XeLaTeX**编译，目前只有它默认使用utf-8编码，否则会编译失败
 
 :computer: **更新日志**
+- 2026.05.27(dtk-logos.sty)
+  1. 修正了dtk-logos.sty包对额外`LatinModernMath`, `XITSMath`, `Linux Libertine O`字体的依赖，目前无需上述三种额外字体即可正常编译(Issue #36)
+
 - 2026.03.22(swjtuThesis.cls)
   1. 进一步修正优化了多行图题表题的额外缩进(Issue #35)
 

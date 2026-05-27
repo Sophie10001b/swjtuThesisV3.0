@@ -27,8 +27,8 @@
 \RequirePackage{fetamont,hologo,dantelogo,xspace}
 \if@dtk@newengine
   \RequirePackage{unicode-math}
-  \setmathfont{LatinModernMath-Regular}
-  \setmathfont[version=XITS]{XITSMath-Regular.otf}
+  % \setmathfont{LatinModernMath-Regular}
+  % \setmathfont[version=XITS]{XITSMath-Regular.otf}
 \fi  
 %
 \iffalse
@@ -156,12 +156,13 @@
 \def\PSTricks{\textsf{PSTricks}\xspace}
 \let\pstricks\PSTricks
 
-\if@dtk@newengine
-  \newfontfamily\dtk@LinWikipedia{Linux Libertine O}%
-  \def\WikipediA{{\dtk@LinWikipedia\char"E02F\textsc{ikipediA}}} % hexadezimal
-\else
-  \def\WikipediA{WikipediA}%
-\fi
+% \if@dtk@newengine
+%   \newfontfamily\dtk@LinWikipedia{Linux Libertine O}%
+%   \def\WikipediA{{\dtk@LinWikipedia\char"E02F\textsc{ikipediA}}} % hexadezimal
+% \else
+%   \def\WikipediA{WikipediA}%
+% \fi
+\def\WikipediA{WikipediA}%
 \let\wikipedia\WikipediA
 %
 \def\macOS{\textsf{macOS}\xspace}
