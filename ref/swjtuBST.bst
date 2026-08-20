@@ -1,3 +1,4 @@
+% 本文件含本地补丁（相对上游 swjtuThesisV3.0 模板）：见文中标注「本地补丁」处。
 %%
 %% This is file `swjtuBib.bst',
 %% generated with the docstrip utility.
@@ -1331,14 +1332,24 @@ FUNCTION {thesis}
   "title" output.check
   add.D
   new.sentence
-  address "address" bibinfo.check output
-  add.colon
+  address empty$          % 本地补丁：address 为空时不输出冒号，避免 "[D]: 学校"
+    'skip$
+    { address "address" bibinfo.check output
+      add.colon }
+  if$
   school "school" bibinfo.warn output
   format.date "year" output.check
   freeoutput.pages
   format.note output
   fin.entry
 }
+
+% 本地补丁：BibTeX 无内建 thesis 类型，Zotero 导出的是 phdthesis / mastersthesis。
+% 二者在 GB/T 7714-2015 中同为 [D]，此处一并指向 thesis，否则会落到
+% default.type (misc)，丢失 [D] 标识与学校名。
+FUNCTION {phdthesis} { thesis }
+
+FUNCTION {mastersthesis} { thesis }
 
 FUNCTION {proceedings}
 { output.bibitem
