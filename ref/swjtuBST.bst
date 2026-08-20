@@ -1048,6 +1048,13 @@ FUNCTION {add.D} %%%alanxu-5-21
 }
 
 % V3.0 new, support any custom GB/T symbol by "symbol"
+FUNCTION {add.S} %%%本地补丁：GB/T 7714-2015 标准文献标识
+{ duplicate$ empty$
+    'skip$
+    { " [S]" * }
+  if$
+}
+
 FUNCTION {add.GBTSYMBOL}
 { symbol empty$
   {"the symbol of GB/T 7714-2005 is empty" cite$ * warning$}
@@ -1312,15 +1319,44 @@ FUNCTION {website}
  empty.misc.check
 }
 
+% 本地补丁：出版项，输出「出版地: 出版者, 出版年」
+FUNCTION {format.pubaddress}
+{ address empty$
+    'skip$
+    { address "address" bibinfo.check output
+      add.colon }
+  if$
+  publisher "publisher" bibinfo.check output
+  format.date output
+}
+
+% 本地补丁：Zotero 的「标准」条目经 Better BibTeX 导出为 @misc（BibTeX 无
+% standard 类型）。此处按 GB/T 7714-2015 补出类型标识与出版项：
+%   - symbol 非空  → 用 symbol 作标识（[S]/[R]/[DB/OL]…），Zotero 侧在 Extra
+%                    写 "tex.symbol: S" 即可由 Better BibTeX 导出该字段
+%   - symbol 为空但 address 非空 → 按标准处理，标识取 [S]（兜底规则）
+%   - 二者皆空 → 保持 @misc 原有行为（arXiv / Zenodo 预印本等不受影响）
+% 标准分支不输出 note：Better BibTeX 会把 Extra 中未识别的行倒进 note，
+% 那些是研究批注，不应印入参考文献表。
 FUNCTION {misc}
 { output.bibitem
   format.authors output
   new.sentence
   format.title output
-  new.sentence
-  howpublished "howpublished" bibinfo.check output
-  format.date output
-  format.note output
+  symbol empty$
+    { address empty$
+        { new.sentence
+          howpublished "howpublished" bibinfo.check output
+          format.date output
+          format.note output }
+        { add.S
+          new.sentence
+          format.pubaddress }
+      if$ }
+    { add.GBTSYMBOL
+      new.sentence
+      format.pubaddress }
+  if$
   fin.entry
   empty.misc.check
 }
