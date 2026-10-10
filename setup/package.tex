@@ -23,6 +23,14 @@
 % 全局设置表格字体
 \usepackage{etoolbox}
 
+% 子式编号跳过字母 l：正文字体中 l 与 1 字形相近，(4-1l) 与 (4-11) 难以区分。
+% 子式序号依次为 a, b, ..., k, m, n, ...，替换 amsmath 中 subequations 的 \alph{equation}。
+\newcommand*{\swjtuAlphNoL}[1]{%
+  \ifcase\value{#1}\or a\or b\or c\or d\or e\or f\or g\or h\or i\or j\or k%
+  \or m\or n\or o\or p\or q\or r\or s\or t\or u\or v\or w\or x\or y\or z\fi}
+\patchcmd{\subequations}{\alph{equation}}{\swjtuAlphNoL{equation}}{}%
+  {\PackageWarningNoLine{swjtuThesis}{subequations 子式编号补丁未生效}}
+
 % 表格制作常用宏包
 \usepackage{multirow}
 
